@@ -51,12 +51,12 @@ const Testimonial = () => {
             return (
               <div
                 key={id}
-                className="card h-[17rem] w-[18rem] rounded-md shadow-xl flex flex-col space-y-3"
+                className="card h-[17rem] w-[18rem] rounded-md shadow-lg flex flex-col space-y-3  bg-gray-50"
               >
                 <div className="header w-full h-[30%] mx-6 text-3xl flex justify-start items-center">
                   <img src={companyImage} alt="" className="h-full p-2" />
                 </div>
-                <div className="desc h-[35%] mx-8 mb-3 text-gray-500">
+                <div className="desc h-[35%] mx-8 mb-3 text-gray-500  bg-gray-50">
                   {description}
                 </div>
                 <div className="h-[20%] flex  flex-row">
@@ -67,7 +67,7 @@ const Testimonial = () => {
                       className="rounded-full h-[80%] border-2 border-white mt-5"
                     />
                   </div>
-                  <div className="personDesc flex flex-col justify-center items-center h-">
+                  <div className="personDesc flex flex-col justify-center items-center  bg-gray-50">
                     <div className="h-[50%] text-xl">{personName}</div>
                     <div className="h-[20%] text-md  text-gray-600">
                       {personPosition}
