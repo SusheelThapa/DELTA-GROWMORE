@@ -1,4 +1,3 @@
-import Analytics from "../../components/Analytics";
 import Box from "../../components/Box";
 import Feature from "../../components/Feature";
 import Footer from "../../components/Footer";
@@ -13,11 +12,10 @@ const LandingPage = () => {
       <NavBar />
       <Hero />
       <Box />
-      <Service/>
-      <Feature/>
-      <Analytics/>
-      <Testimonial/>
-      <Footer/>
+      <Service />
+      <Feature />
+      <Testimonial />
+      <Footer />
     </div>
   );
 };
