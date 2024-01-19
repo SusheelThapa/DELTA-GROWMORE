@@ -1,5 +1,6 @@
 import { FaThumbsUp, FaRegCommentAlt } from "react-icons/fa";
 import { IoMdSend } from "react-icons/io";
+import Comment, { CommentProps } from "../Comment/Comment";
 
 export interface Post {
   username: string;
@@ -8,6 +9,7 @@ export interface Post {
   postImageURL: string;
   noOfLikes: number;
   noOfComments: number;
+  comments?: CommentProps[];
 }
 
 interface Props {
@@ -66,6 +68,23 @@ const Post = ({ post, inModal = false }: Props) => {
           </div>
         </div>
       </div>
+      {inModal && (
+        <div>
+          {post.comments && (
+            <div className="mt-4">
+              <h3 className="text-md font-semibold mb-2 ml-6">Comments</h3>
+              {post.comments.map(({ username, comment, date }, index) => (
+                <Comment
+                  username={username}
+                  comment={comment}
+                  date={date}
+                  key={index}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };
