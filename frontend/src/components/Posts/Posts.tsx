@@ -1,3 +1,4 @@
+import CreatePost from "./CreatePost";
 import Post from "./Post";
 
 interface Props {
@@ -39,10 +40,19 @@ const Posts = ({ className }: Props) => {
   ];
 
   return (
-    <div className={`flex flex-col  justify-between items-center ${className}`}>
-      {posts.map((post) => (
-        <Post post={post} />
-      ))}
+    <div className={`${className}`}>
+      <CreatePost
+        onPostSubmit={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
+      <div
+        className={`flex flex-col  justify-between items-center ${className}`}
+      >
+        {posts.map((post) => (
+          <Post post={post} />
+        ))}
+      </div>
     </div>
   );
 };
