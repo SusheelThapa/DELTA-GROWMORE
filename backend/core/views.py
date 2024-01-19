@@ -1,3 +1,5 @@
+import requests
+import json
 from django.contrib.auth import authenticate
 from rest_framework import status
 from rest_framework.response import Response
@@ -87,3 +89,30 @@ class LikeCreateView(CreateAPIView):
     renderer_classes = [UserRenderer]
     permission_classes = [IsAuthenticated]
     serializer_class = PostLikeSerializer
+
+
+# View to integrate Khalti payment.
+class KhaltiPaymentView(APIView):
+    def post(self, request):
+        url = "https://a.khalti.com/api/v2/epayment/initiate/"
+
+        payload = json.dumps({
+            "return_url": request.data.get('return_url'),
+            "website_url": "https://example.com/",
+            "amount": request.data.get('amount'),
+            "purchase_order_id": 1,
+            "purchase_order_name": "test",
+            "customer_info": {
+            "name": "Ram Bahadur",
+            "email": "test@khalti.com",
+            "phone": "9800000001"
+            }
+        })
+        headers = {
+            'Authorization': 'key 8dc5e3777aaf4d2595c2ee3a1e10c1f4',
+            'Content-Type': 'application/json',
+        }
+
+        response = requests.request("POST", url, headers=headers, data=payload)
+        print(response.text)
+        return Response(response.text)
