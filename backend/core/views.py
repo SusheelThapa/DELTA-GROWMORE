@@ -12,8 +12,9 @@ from .renderers import UserRenderer
 from .models import User, Post, PostLike, PostComment
 from .serializers import UserRegisterationSerializer, UserLoginSerializer, UserProfileSerializer, UserPostCreateSerializer, PostViewSerializer, PostCommentSerializer, PostLikeSerializer
 
+from .ml_predict import predict_disease
 
-# Utility function to generate JWT tokens for a user
+# Utility function to generate JWT tokens for a user``
 def get_tokens_for_user(user):
     refresh = RefreshToken.for_user(user)
     return {
@@ -116,3 +117,10 @@ class KhaltiPaymentView(APIView):
         response = requests.request("POST", url, headers=headers, data=payload)
         print(response.text)
         return Response(response.text)
+    
+
+# View for prediction using ML model.
+class PredictionView(APIView):
+    def post(self, request):
+        result = predict_disease()
+        Response({'result':result})
