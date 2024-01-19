@@ -3,7 +3,7 @@ import Button from "../Button";
 
 const Hero = () => {
   return (
-    <div className="m-4 mx-96 flex justify-between items-center">
+    <div className="m-4 mx-80 flex justify-between items-center">
       <div className="m-10 space-y-10 flex flex-col justify-evenly w-3/5">
         <div>
           <h1 className="my-4 text-5xl font-extrabold text-black">

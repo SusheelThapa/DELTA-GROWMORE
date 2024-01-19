@@ -16,7 +16,20 @@ const Footer = () => {
           </span>
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <Button>Login</Button>
+          <Button
+            className="
+            w-40
+            bg-green-600
+            text-white
+            hover:bg-green-700
+            rounded-lg
+            text-lg
+            px-2
+            py-2
+            text-center"
+          >
+            Login
+          </Button>
         </div>
         <div
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
