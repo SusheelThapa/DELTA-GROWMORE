@@ -12,11 +12,14 @@ export interface Post {
 
 interface Props {
   post: Post;
+  inModal?: boolean;
 }
 
-const Post = ({ post }: Props) => {
+const Post = ({ post, inModal = false }: Props) => {
   const profileImage =
     "https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=";
+
+  const imageClassName = inModal ? "max-h-60 w-auto" : "mt-3 w-full rounded-lg";
 
   return (
     <div className="mx-32 my-4 bg-white rounded-3xl border border-gray-300 shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
@@ -36,7 +39,7 @@ const Post = ({ post }: Props) => {
         <p className="mt-3 text-gray-800">{post.description}</p>
 
         <img
-          className="mt-3 w-full rounded-lg"
+          className={`mt-3 w-full rounded-lg ${imageClassName}`}
           src={post.postImageURL}
           alt="Post"
         />
