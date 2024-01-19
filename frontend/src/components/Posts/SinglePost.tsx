@@ -21,7 +21,9 @@ const Post = ({ post, inModal = false }: Props) => {
   const profileImage =
     "https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=";
 
-  const imageClassName = inModal ? "max-h-60 w-auto" : "mt-3 w-full rounded-lg";
+  const imageClassName = inModal
+    ? "mt-3 w-auto max-h-60 rounded-lg"
+    : "max-h-80 w-auto mx-auto";
 
   return (
     <div className="mx-32 my-4 bg-white rounded-3xl border border-gray-300 shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
