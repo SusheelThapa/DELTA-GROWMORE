@@ -1,5 +1,7 @@
+import MARSummary from "../../components/MARSummary";
+
 const MarketAnalysisResult = () => {
-  return <div>MarketAnalysisResult</div>;
+  return <MARSummary />;
 };
 
 export default MarketAnalysisResult;
