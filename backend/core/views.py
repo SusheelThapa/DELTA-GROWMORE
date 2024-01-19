@@ -2,12 +2,13 @@ from django.contrib.auth import authenticate
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.generics import ListCreateAPIView, CreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from .renderers import UserRenderer
-from .models import User
-from .serializers import UserRegisterationSerializer, UserLoginSerializer, UserProfileSerializer
+from .models import User, Post, PostLike, PostComment
+from .serializers import UserRegisterationSerializer, UserLoginSerializer, UserProfileSerializer, UserPostCreateSerializer, PostViewSerializer, PostCommentSerializer, PostLikeSerializer
 
 
 # Utility function to generate JWT tokens for a user
@@ -47,10 +48,42 @@ class UserLoginView(APIView):
     else:
         Response({'errors':{'non_field_errors':['Email or Password is not Valid']}}, status=status.HTTP_404_NOT_FOUND)
 
-
+# View for User Profile.
 class UserProfileView(APIView):
     renderer_classes = [UserRenderer]
     permission_classes = [IsAuthenticated]
     def get(self, request, format=None):
         serializer = UserProfileSerializer(request.user)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+
+# View for Post creation and list.
+class PostView(ListCreateAPIView):
+    renderer_classes = [UserRenderer]
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Post.objects.prefetch_related('postcomment_set', 'postlike_set').all().order_by('created_at')
+    
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return PostViewSerializer
+        if self.request.method == 'POST':
+            return UserPostCreateSerializer
+        
+    def get_serializer_context(self):
+        return {'user':self.request.user}
+        
+
+# View for adding comments on posts.
+class CommentCreateView(CreateAPIView):
+    renderer_classes = [UserRenderer]
+    permission_classes = [IsAuthenticated]
+    serializer_class = PostCommentSerializer
+
+
+# View for adding likes on posts.
+class LikeCreateView(CreateAPIView):
+    renderer_classes = [UserRenderer]
+    permission_classes = [IsAuthenticated]
+    serializer_class = PostLikeSerializer
