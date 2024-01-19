@@ -1,16 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
 
 const App = () => {
-  // This will contain all the pages of our project
-  const pages = [];
   return (
-    <>
-      <Router>
-        <Routes>
-          {/* Here we will be write all the routes */}
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
+    </Router>
   );
 };
 
