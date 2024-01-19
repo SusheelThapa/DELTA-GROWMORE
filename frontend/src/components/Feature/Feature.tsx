@@ -30,7 +30,7 @@ const Feature = () => {
     },
   ];
   return (
-    <div className="flex justify-center items-center flex-col space-y-10 my-10  ">
+    <div className="flex justify-center items-center flex-col space-y-16 my-10  ">
       <div className="">
         <h1 className="text-5xl font-extrabold m-4 mb-6 text-center">
           Our Features
