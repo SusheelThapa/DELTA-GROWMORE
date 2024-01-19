@@ -1,73 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
-import { FaSignOutAlt } from "react-icons/fa";
-import {
-  MdExplore,
-  MdSubscriptions,
-  MdOutlineAnalytics,
-  MdOutlineDashboard,
-} from "react-icons/md";
-import { GoCopilot } from "react-icons/go";
-import { ImStatsDots } from "react-icons/im";
-import { GiFarmer } from "react-icons/gi";
 
-const Sidebar = () => {
-  const menus = [
-    {
-      name: "Dashboard",
-      link: "/dashboard",
-      icon: MdOutlineDashboard,
-    },
-    {
-      name: "Profile",
-      link: "/profile",
-      icon: AiOutlineUser,
-    },
-    {
-      name: "Crop Monitor",
-      link: "/crop-monitor",
-      icon: ImStatsDots,
-    },
+import { Page } from "../Homepage";
 
-    {
-      name: "Farmer",
-      link: "/farmer",
-      icon: GiFarmer,
-    },
-    {
-      name: "Market Analysis",
-      link: "/market-analysis",
-      icon: MdOutlineAnalytics,
-    },
-    {
-      name: "Connect",
-      link: "/connect",
-      icon: MdExplore,
-    },
-    {
-      name: "Finance",
-      link: "/finance",
-      icon: AiOutlineHeart,
-    },
-    {
-      name: "Grow AI",
-      link: "/growai",
-      icon: GoCopilot,
-    },
-    {
-      name: "Subscription",
-      link: "/subscription",
-      icon: MdSubscriptions,
-    },
-    {
-      name: "Signout",
-      link: "/",
-      icon: FaSignOutAlt,
-    },
-  ];
+interface Props {
+  pages: Page[];
+}
 
+const Sidebar = ({ pages }: Props) => {
   const [open, setOpen] = useState(true);
 
   return (
@@ -85,7 +26,7 @@ const Sidebar = () => {
           />
         </div>
         <div className="mt-4 flex flex-col gap-4 relative ">
-          {menus?.map((menu, i) => (
+          {pages?.map((menu, i) => (
             <div className="hover:text-green-500" key={i}>
               <Link
                 to={menu?.link}
@@ -94,7 +35,7 @@ const Sidebar = () => {
                 <div>{React.createElement(menu?.icon, { size: "20" })}</div>
                 <h2
                   style={{
-                    transitionDelay: `${i + 3}00ms`,
+                    transitionDelay: `${i + 4}00ms`,
                   }}
                   className={`whitespace-pre duration-500 ${
                     !open && "opacity-0 translate-x-28 overflow-hidden"
