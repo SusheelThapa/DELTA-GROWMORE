@@ -27,7 +27,7 @@ const Homepage = ({ pages }: Props) => {
       {false && <Dashboard />}
       {false && <Profile />}
       {false && <CropMonitor />}
-      {false && <Farmer />}
+      {true && <Farmer />}
       {false && <MarketAnalysis />}
       {false && <Connect />}
       {false && <Finance />}

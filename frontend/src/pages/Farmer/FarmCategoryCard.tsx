@@ -3,16 +3,20 @@ interface Props {
   name: string;
   count: string;
 }
-const FarmCategoryCard: React.FC<Props> = ({ img, name, count }) => {
+const FarmCategoryCard = ({ img, name, count }: Props) => {
   return (
-    <div className="border border-gray-200 hover:border-gray-300 hover:scale-105 transition-transform round-lg">
-      <div className="flex justify-between items-center p-6">
-        <div className="space-y-4">
-          <h3 className="font-medium text-xl">{name}</h3>
-          <p className="text-gray-500">{count}</p>
-          <img className="w-[100px]" src={img} alt={name} />
-        </div>
+    <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-100">
+      <div>
+        <h3 className="text-lg font-semibold text-gray-800 hover:text-blue-600">
+          {name}
+        </h3>
+        <p className="text-gray-600">{count} items</p>
       </div>
+      <img
+        src={img}
+        alt={name}
+        className="w-24 h-24 object-cover rounded-full ml-4"
+      />
     </div>
   );
 };
