@@ -1,5 +1,13 @@
-const Profile = () => {
-  return <div>This is Profile section</div>;
-};
+import ProfileHero from "./ProfileHero"
+import ProfileNav from "./ProfileNav"
 
-export default Profile;
+const Profile = () => {
+  return (
+    <div>
+      <ProfileNav />
+      <ProfileHero />
+    </div>
+  )
+}
+
+export default Profile
