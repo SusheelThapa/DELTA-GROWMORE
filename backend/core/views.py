@@ -63,7 +63,7 @@ class PostView(ListCreateAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Post.objects.prefetch_related('postcomment_set', 'postlike_set').all().order_by('created_at')
+        return Post.objects.prefetch_related('postcomment_set', 'postlike_set').all().order_by('-created_at')
     
     def get_serializer_class(self):
         if self.request.method == 'GET':
