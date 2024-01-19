@@ -1,4 +1,5 @@
 import Analytics from "../../components/Analytics";
+import Box from "../../components/Box";
 import Feature from "../../components/Feature";
 import Footer from "../../components/Footer";
 import Hero from "../../components/Hero";
@@ -11,6 +12,7 @@ const LandingPage = () => {
     <div>
       <NavBar />
       <Hero />
+      <Box />
       <Service/>
       <Feature/>
       <Analytics/>
