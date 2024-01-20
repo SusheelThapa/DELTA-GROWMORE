@@ -7,6 +7,9 @@ const CropMonitor = () => {
   return (
     <>
       <div className="flex flex-col w-full">
+        <h1 className="w-full my-4 text-5xl font-extrabold text-center">
+          Data Analytics
+        </h1>
         <div className="bg-gray-200 w-full h-[80%] flex flex-row justify-between p-3">
           <div className="w-[49%] flex flex-col justify gap-6">
             <Average />
