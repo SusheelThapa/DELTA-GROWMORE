@@ -33,7 +33,7 @@ const Post = ({ post, inModal = false }: Props) => {
     : "max-h-80 w-auto mx-auto";
 
   return (
-    <div className="mx-32 my-4 bg-white rounded-3xl border border-gray-300 shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+    <div className="mx-32 my-1 bg-white rounded-3xl border border-gray-300 shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
       <div className="p-7">
         <div className="flex items-center space-x-3 overflow-hidden rounded-full">
           <img

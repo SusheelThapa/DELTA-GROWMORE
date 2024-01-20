@@ -52,20 +52,19 @@ const Posts = ({ className }: Props) => {
           <div
             key={post.id}
             onClick={() => handlePostClick(post)}
-            className="m-4 p-4  rounded-xl "
+            className="m-0.5 p-2  rounded-xl "
           >
             <SinglePost post={post} />
           </div>
         ))}
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <div className="mx-auto max-w-4xl max-h-[90vh] overflow-y-auto bg-white p-4 rounded-lg shadow-lg">
+        <div className="mx-auto max-w-4xl max-h-[90vh] overflow-y-hidden  bg-gray-200 p-4 rounded-lg">
           {selectedPost && <SinglePost post={selectedPost} inModal={true} />}
         </div>
       </Modal>
       <div className="fixed bottom-10 right-10 bg-green-600 p-4 rounded-full shadow-md hover:bg-green-700 transition-colors">
         <FaSeedling className="text-white text-2xl" />{" "}
-        {/* Example icon for a new post or similar action */}
       </div>
     </div>
   );
