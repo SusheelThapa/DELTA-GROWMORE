@@ -1,6 +1,7 @@
 import { FaThumbsUp, FaRegCommentAlt } from "react-icons/fa";
 import { IoMdSend } from "react-icons/io";
 import Comment from "../Comment/Comment";
+import { generateRandomNumber } from "../../services/generateRandomNumber";
 
 export interface Post {
   id: number;
@@ -58,14 +59,14 @@ const Post = ({ post, inModal = false }: Props) => {
           alt="Post"
         />
 
-        <div className="flex justify-between items-center mt-3 text-gray-500">
+        <div className="flex justify-between items-center mt-3 mx-4 text-gray-500">
           <button className="flex items-center space-x-1 hover:text-blue-600">
             <FaThumbsUp />
-            <span>{}</span>
+            <span>{generateRandomNumber()}</span>
           </button>
           <button className="flex items-center space-x-1 hover:text-blue-600">
+            <span>{generateRandomNumber()}</span>
             <FaRegCommentAlt />
-            <span>{}</span>
           </button>
         </div>
 
