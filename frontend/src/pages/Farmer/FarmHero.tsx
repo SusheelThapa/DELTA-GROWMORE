@@ -3,8 +3,8 @@ import { BsArrowRight } from "react-icons/bs";
 const FarmHero = () => {
   return (
     <>
-      <div className="container pt-4">
-        <div className="grid xl:grid-cols-4 xl-grid-row-2 gap-4 w-screen">
+      <div className="pt-4">
+        <div className="grid xl:grid-cols-4 xl-grid-row-2 gap-4 ">
           <div className="relative xl:col-span-2 xl:row-start-1 xl:row-end-[-1]">
             <img
               src="https://github.com/thebravecoders/Assets__Creating-a-Responsive-eCommerce-Website-with-React-and-Tailwind-CSS-Hindi-Tutorial/raw/main/hero__1.webp"

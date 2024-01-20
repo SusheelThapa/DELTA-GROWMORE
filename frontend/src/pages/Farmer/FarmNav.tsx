@@ -7,7 +7,7 @@ interface Props {
 
 const FarmNav = ({ number }: Props) => {
   return (
-    <div className="container lg-block w-screen mb-8">
+    <div className=" lg-block  mb-8">
       <div className="flex justify-between items-center pt-8">
         <h1 className="text-4xl font-medium">Logo</h1>
 
