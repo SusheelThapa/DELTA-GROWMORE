@@ -52,7 +52,7 @@ const Posts = ({ className }: Props) => {
           <div
             key={post.id}
             onClick={() => handlePostClick(post)}
-            className="m-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            className="m-4 p-4  rounded-xl "
           >
             <SinglePost post={post} />
           </div>
