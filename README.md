@@ -52,6 +52,8 @@
 ## Demo
 
 <!-- TODO: Demo video will be update via github -->
+### Canva Link 
+- https://www.canva.com/design/DAFbokN_c4U/4H2Z5TQTwC5iSnctsKOtYQ/edit?utm_content=DAFbokN_c4U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ## Installation
 
@@ -156,3 +158,5 @@ This project is licensed under the [MIT License](/LICENSE).
 
 DharanHackanthon.md
 Displaying DharanHackanthon.md.
+
+
