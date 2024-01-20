@@ -16,8 +16,9 @@ const Footer = () => {
           </span>
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <Button
-            className="
+          <Link to="/login">
+            <Button
+              className="
             w-40
             bg-green-600
             text-white
@@ -27,9 +28,10 @@ const Footer = () => {
             px-2
             py-2
             text-center"
-          >
-            Login
-          </Button>
+            >
+              Login
+            </Button>
+          </Link>
         </div>
         <div
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
