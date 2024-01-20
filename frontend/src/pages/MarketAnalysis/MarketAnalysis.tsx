@@ -1,3 +1,9 @@
+/**
+ * @file MarketAnalysis.tsx
+ * @description Component for conducting market analysis, capturing details like location, main market, main crop, last year's yield, and waste statistics.
+ * Integrates multi-step form functionality for data input, confirmation, and analysis initiation.
+ */
+
 import React, { useState } from "react";
 import { FaRegCircle } from "react-icons/fa";
 import {
@@ -6,7 +12,12 @@ import {
   PiNumberCircleThreeFill,
 } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
-
+/**
+ * @function MarketAnalysis
+ * @description Component for conducting market analysis.
+ *
+ * @returns {TSX.Element} - The MarketAnalysis component.
+ */
 const MarketAnalysis = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -34,12 +45,14 @@ const MarketAnalysis = () => {
     navigate("/market-analysis/result");
   };
 
+  // Function to navigate back in the form steps
   const handleBack = () => {
     if (step > 1) {
       setStep((prevStep) => prevStep - 1);
     }
   };
 
+  // Component to display step indicators
   const StepIndicator = ({ num }: { num: number }) => {
     let Icon;
     switch (num) {
@@ -81,8 +94,11 @@ const MarketAnalysis = () => {
                 Welcome to Market Analysis
               </h2>
               <div className="text-center px-32 text-xl mt-20 text-green-700">
-              Our market analysis focuses on the Main Market, detailing its location, primary crop, last year's yield, and waste statistics. Leveraging our website analytics, we gain valuable insights into market trends, helping stakeholders make informed decisions.
-            </div>
+                Our market analysis focuses on the Main Market, detailing its
+                location, primary crop, last year's yield, and waste statistics.
+                Leveraging our website analytics, we gain valuable insights into
+                market trends, helping stakeholders make informed decisions.
+              </div>
               <button
                 onClick={handleStart}
                 className="bg-green-500 text-white px-4 py-2 rounded mt-14 w-[10rem] text-xl"
@@ -90,7 +106,6 @@ const MarketAnalysis = () => {
                 Start
               </button>
             </div>
-
           </>
         )}
 

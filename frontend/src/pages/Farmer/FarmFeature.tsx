@@ -1,3 +1,15 @@
+/**
+ * @file FarmFeature.tsx
+ * @description Component for displaying featured farm products and categories.
+ *
+ * @module FarmFeature
+ */
+/**
+ * @function FarmFeature
+ * @description Component for displaying featured farm products and categories.
+ *
+ * @returns {TSX.Element} - The FarmFeature component.
+ */
 const FarmFeature = () => {
   return (
     <div className="container pt-16">
@@ -10,10 +22,10 @@ const FarmFeature = () => {
         </div>
         <div className="space-x-4 mt-8 lg:mt-0">
           <button className="feature_btn text-green-500 px-4 py-1 rounded-full">Fruits</button>
-          <button className="text-gray-600 hover: text-green-200 feature_btn px-4 py-1 rounded-full">
+          <button className="text-gray-600 hover:text-green-200 feature_btn px-4 py-1 rounded-full">
             Vegetables
           </button>
-          <button className="text-gray-600 hover: text-green-200 feature_btn px-4 py-1 rounded-full">
+          <button className="text-gray-600 hover:text-green-200 feature_btn px-4 py-1 rounded-full">
             Bread & Bakery
           </button>
         </div>

@@ -1,5 +1,12 @@
+/**
+ * @file FarmCategory.tsx
+ * @description Component for displaying farm categories and their respective items.
+ *
+ * @module FarmCategory
+ */
 import FarmCategoryCard from "./FarmCategoryCard";
 
+// Data for farm categories
 const data = [
   {
     id: 0,
@@ -50,7 +57,12 @@ const data = [
     img: "https://media.istockphoto.com/id/927134424/photo/plain-yogurt-is-super-healthy.jpg?s=612x612&w=0&k=20&c=ijce-CSJZfS6FmfwRbdOUTgd9AtX5O9015TP-GmOjqs=",
   },
 ];
-
+/**
+ * @function FarmCategory
+ * @description Component for displaying farm categories and their respective items.
+ *
+ * @returns {TSX.Element} - The FarmCategory component.
+ */
 const FarmCategory = () => {
   return (
     <div className="container pt-16 w-full">

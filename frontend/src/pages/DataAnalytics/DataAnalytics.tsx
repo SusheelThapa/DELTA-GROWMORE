@@ -1,8 +1,21 @@
+/**
+ * @file CropMonitor.tsx
+ * @description Component for displaying crop monitoring data analytics.
+ *
+ * @module CropMonitor
+ */
+
 import Average from "../../components/CropMonitor/Average";
 import DailyIrrigation from "../../components/CropMonitor/DailyIrrigation";
 import SoilMoistureHistoryData from "../../components/CropMonitor/SoilMoistureHistoryData";
 import SoilTemperatureHistory from "../../components/CropMonitor/SoilTemperatureHistory";
 
+/**
+ * @function CropMonitor
+ * @description Component for displaying crop monitoring data analytics.
+ *
+ * @returns {TSX.Element} - The CropMonitor component.
+ */
 const CropMonitor = () => {
   return (
     <>

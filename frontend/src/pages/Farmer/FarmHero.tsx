@@ -1,5 +1,17 @@
+/**
+ * @function FarmHero
+ * @description Component representing the hero section of the farm products page.
+ * It includes a prominent image, a headline, and a call-to-action for shopping dried fruits.
+ *
+ * @returns {TSX.Element} - The FarmHero component.
+ */
 import { BsArrowRight } from "react-icons/bs";
-
+/**
+ * @function FarmHero
+ * @description Component rendering the hero section with a call-to-action for dried fruits.
+ *
+ * @returns {TSX.Element} - The FarmHero component.
+ */
 const FarmHero = () => {
   return (
     <div className="flex items-center justify-center w-full pt-4">

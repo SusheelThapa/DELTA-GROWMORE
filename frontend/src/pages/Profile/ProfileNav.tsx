@@ -1,6 +1,15 @@
+/**
+ * @file ProfileNav.tsx
+ * @description Component representing the navigation section of the user profile.
+ */
 
 import susheel from "../../images/susheel.jpg";
-
+/**
+ * @function ProfileNav
+ * @description Component representing the navigation section of the user profile.
+ *
+ * @returns {TSX.Element} - The ProfileNav component.
+ */
 const ProfileNav = () => {
   return (
     <>

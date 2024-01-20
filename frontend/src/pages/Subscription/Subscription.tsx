@@ -1,7 +1,16 @@
+/**
+ * @file Subscription.tsx
+ * @description Component representing the subscription page with pricing information.
+ */
 import PricingCard from "../../components/Subscription/PricingCard";
 import PricingCardPremium from "../../components/Subscription/PricingCardPremium";
 import PricingCardStandard from "../../components/Subscription/PricingCardStandard";
-
+/**
+ * @function Subscription
+ * @description Component representing the subscription page with pricing information.
+ *
+ * @returns {TSX.Element} - The Subscription component.
+ */
 const Subscription = () => {
   return(
     <>

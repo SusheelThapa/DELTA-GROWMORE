@@ -1,7 +1,21 @@
+/**
+ * @file MarketAnalysisResult.tsx
+ * @description Component displaying the results of market analysis.
+ * Integrates MARSummary and MARTable components to present detailed insights.
+ */
+
 import MARSummary from "../../components/MARSummary";
 import MARTable from "../../components/MARTable";
 
+/**
+ * @function MarketAnalysisResult
+ * @description Component displaying the results of market analysis.
+ *
+ * @returns {TSX.Element} - The MarketAnalysisResult component.
+ */
+
 const MarketAnalysisResult = () => {
+    // Sample market analysis results data
   const results = [
     {
       dataStream: "Crop Yield Trends",
@@ -87,5 +101,5 @@ const MarketAnalysisResult = () => {
     </div>
   );
 };
-
+// Exporting the MarketAnalysisResult component as the default export
 export default MarketAnalysisResult;

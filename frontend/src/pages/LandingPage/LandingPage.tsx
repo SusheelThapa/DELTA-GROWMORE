@@ -1,3 +1,9 @@
+/**
+ * @file LandingPage.tsx
+ * @description Functional component representing the landing page of the application.
+ * This component integrates various sections like NavBar, Hero, Box, Service, Feature, Testimonial, and Footer.
+ */
+
 // Importing necessary components from their respective paths
 import Box from "../../components/Box";
 import Feature from "../../components/Feature";

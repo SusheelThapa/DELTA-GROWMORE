@@ -1,8 +1,17 @@
-import React from "react";
+/**
+ * @file Profile.tsx
+ * @description Component representing the user profile section.
+ */
+
 import susheel from "../../images/susheel.jpg";
 import { AiOutlineAim } from "react-icons/ai";
 import { MdAppBlocking } from "react-icons/md";
-
+/**
+ * @function Profile
+ * @description Component representing the user profile section.
+ *
+ * @returns {TSX.Element} - The Profile component.
+ */
 const Profile = () => {
   return (
     <div className="w-full mb-8">

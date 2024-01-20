@@ -1,6 +1,13 @@
+/**
+ * @file FarmBreakFastDaiy.tsx
+ * @description Component for displaying breakfast and dairy products available for purchase.
+ *
+ * @module FarmBreakFastDaiy
+ */
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 
+// Data for breakfast and dairy products
 const items = [
   {
     id: 1,
@@ -67,8 +74,20 @@ const items = [
     rating: 5,
   },
 ];
-
+/**
+ * @function FarmBreakFastDaiy
+ * @description Component for displaying breakfast and dairy products available for purchase.
+ *
+ * @returns {JSX.Element} - The FarmBreakFastDaiy component.
+ */
 const FarmBreakFastDaiy = () => {
+    /**
+   * @function renderStars
+   * @description Renders star icons based on the product's rating.
+   *
+   * @param {number} rating - The product's rating.
+   * @returns {TSX.Element[]} - Array of star icons.
+   */
   const renderStars = (rating: number) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -82,7 +101,13 @@ const FarmBreakFastDaiy = () => {
     }
     return stars;
   };
-
+  /**
+   * @function renderStars
+   * @description Renders star icons based on the product's rating.
+   *
+   * @param {number} rating - The product's rating.
+   * @returns {TSX.Element[]} - Array of star icons.
+   */
   return (
     <div className="my-20 w-full ">
       <h1 className="text-4xl font-bold text-left mb-8">Breakfast and Dairy</h1>
