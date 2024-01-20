@@ -12,6 +12,7 @@ import {
 import { GoCopilot } from "react-icons/go";
 import { ImStatsDots } from "react-icons/im";
 import { GiFarmer } from "react-icons/gi";
+import { MdOutlineBatchPrediction } from "react-icons/md";
 
 import Homepage from "./components/Homepage";
 import MarketAnalysisResult from "./pages/MarketAnalsisResult";
@@ -33,6 +34,11 @@ const pages = [
     name: "Crop Monitor",
     link: "/crop-monitor",
     icon: ImStatsDots,
+  },
+  {
+    name: "Predict Disease",
+    link: "/predict-disease",
+    icon: MdOutlineBatchPrediction,
   },
 
   {
@@ -93,28 +99,32 @@ const App = () => {
             element={<Homepage pages={pages} activePage={pages[2].link} />}
           />
           <Route
-            path="/farmer"
+            path="/predict-disease"
             element={<Homepage pages={pages} activePage={pages[3].link} />}
           />
           <Route
-            path="/market-analysis"
+            path="/farmer"
             element={<Homepage pages={pages} activePage={pages[4].link} />}
           />
           <Route
-            path="/connect"
+            path="/market-analysis"
             element={<Homepage pages={pages} activePage={pages[5].link} />}
           />
           <Route
-            path="/finance"
+            path="/connect"
             element={<Homepage pages={pages} activePage={pages[6].link} />}
           />
           <Route
-            path="/growai"
+            path="/finance"
             element={<Homepage pages={pages} activePage={pages[7].link} />}
           />
           <Route
-            path="/subscription"
+            path="/growai"
             element={<Homepage pages={pages} activePage={pages[8].link} />}
+          />
+          <Route
+            path="/subscription"
+            element={<Homepage pages={pages} activePage={pages[9].link} />}
           />
 
           <Route
