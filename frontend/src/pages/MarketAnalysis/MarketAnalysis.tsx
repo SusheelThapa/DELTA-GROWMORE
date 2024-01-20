@@ -5,6 +5,7 @@ import {
   PiNumberCircleTwoFill,
   PiNumberCircleThreeFill,
 } from "react-icons/pi";
+import { useNavigate } from "react-router-dom";
 
 const MarketAnalysis = () => {
   const [step, setStep] = useState(1);
@@ -15,17 +16,22 @@ const MarketAnalysis = () => {
     lastYearYield: "",
     lastYearWaste: "",
   });
+  const navigate = useNavigate();
 
   const handleStart = () => setStep(2);
+
   const handleInputChange = (e: React.ChangeEvent) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStep(3);
   };
+
   const handleAnalyze = () => {
     console.log("Analyzing:", formData);
     // Add analysis logic here
+    navigate("/market-analysis/result");
   };
 
   const handleBack = () => {

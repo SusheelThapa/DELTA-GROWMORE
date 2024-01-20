@@ -34,7 +34,7 @@ const MARTable = ({ results }: Props) => {
               return (
                 <tr
                   className={`${
-                    indicator === "Positive"
+                    indicator == "Positive"
                       ? "hover:bg-green-200"
                       : "hover:bg-red-200"
                   } transition duration-300`}
