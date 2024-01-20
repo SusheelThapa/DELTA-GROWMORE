@@ -36,24 +36,28 @@ const MARTable = ({ results }: Props) => {
                   className={`${
                     indicator == "Positive"
                       ? "hover:bg-green-200"
+                      : indicator == "Caution"
+                      ? "hover:bg-yellow-200"
                       : "hover:bg-red-200"
                   } transition duration-300`}
                   key={index}
                 >
-                  <td className="px-6 py-6 border-b bg-transparent border-gray-300 bg-white text-lg">
+                  <td className="px-6 py-6 border-b bg-transparent border-gray-300  text-lg">
                     {index + 1}
                   </td>
-                  <td className="px-6 py-6 border-b bg-transparent border-gray-300 bg-white text-lg">
+                  <td className="px-6 py-6 border-b bg-transparent border-gray-300  text-lg">
                     {dataStream}
                   </td>
-                  <td className="px-6 py-6 border-b bg-transparent border-gray-300 bg-white text-lg">
+                  <td className="px-6 py-6 border-b bg-transparent border-gray-300  text-lg">
                     {comment}
                   </td>
-                  <td className="px-6 py-6 border-b bg-transparent border-gray-300 bg-white text-lg">
+                  <td className="px-6 py-6 border-b bg-transparent border-gray-300  text-lg">
                     <span
                       className={`relative inline-block px-3 py-1 ${
                         indicator === "Positive"
                           ? "text-green-900"
+                          : indicator == "Caution"
+                          ? "text-yellow-900"
                           : "text-red-900 "
                       } font-semibold  leading-tight`}
                     >
@@ -62,11 +66,17 @@ const MARTable = ({ results }: Props) => {
                         className={`absolute inset-0 ${
                           indicator == "Positive"
                             ? "bg-green-300"
+                            : indicator == "Caution"
+                            ? "bg-yellow-300"
                             : "bg-red-300"
                         }  opacity-50 rounded-full`}
                       ></span>
                       <span className="relative">
-                        {indicator === "Positive" ? "Positive" : "Negative"}
+                        {indicator === "Positive"
+                          ? "Positive"
+                          : indicator == "Caution"
+                          ? "Caution"
+                          : "Negative"}
                       </span>
                     </span>
                   </td>
