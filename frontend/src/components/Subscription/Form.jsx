@@ -3,10 +3,29 @@ import axios from "axios";
 
 import khaltiLogo from "../images/khalti.svg";
 
+/**
+ * A form component for handling payments.
+ *
+ * This component renders a payment form with an amount input and a submit button.
+ * On form submission, it sends the amount and a return URL to a specified API endpoint.
+ * After a successful API call, the user is redirected to a payment URL received from the API.
+ *
+ * @returns {JSX.Element} The rendered Form component.
+ */
 const Form = () => {
+  // State variables for amount and return URL
   const [amount, setAmount] = useState("70000");
   const [returnUrl, setReturnUrl] = useState("http://localhost:5173/dashboard");
 
+  /**
+   * Handles the form submission.
+   *
+   * This function prevents the default form submission behavior, constructs the formData,
+   * and sends a POST request to the specified API endpoint. Upon receiving a response,
+   * it redirects the user to the payment URL provided in the response.
+   *
+   * @param {React.FormEvent<HTMLFormElement>} e - The form event.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -15,6 +34,7 @@ const Form = () => {
       return_url: returnUrl,
     };
 
+    // Form data containing amount and return URL
     try {
       const { data } = await axios.post(
         "http://localhost:8000/api/khalti/",

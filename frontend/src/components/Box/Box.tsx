@@ -5,10 +5,16 @@ import { PiMonitorDuotone } from "react-icons/pi";
 import { GiTreeGrowth } from "react-icons/gi";
 import { GrAnalytics } from "react-icons/gr";
 
+/**
+ * @function Box
+ * @description A component displaying a grid of boxes, each with an icon and information related to different services like community, market analytics, AI, etc.
+ * @returns {TSX.Element} - A series of styled boxes with icons and text.
+ */
 const Box = () => {
   return (
     <div className="m-4 p-8 mx-64">
       <div className="grid grid-cols-4 gap-4">
+        {/* Large descriptive box */}
         <div className=" p-8 m-8 shadow-lg rounded-md col-span-2 bg-gray-50">
           <h4 className="text-green-700 text-3xl">Groups for everything</h4>
           <div className="text-zinc-400 mt-1">
@@ -19,6 +25,8 @@ const Box = () => {
             </div>
           </div>
         </div>
+
+        {/* Community box */}
         <div className=" p-8 m-8 shadow-lg rounded-md bg-gray-50">
           <RiCommunityLine className="text-5xl" />
           <h6 className="text-2xl">Community</h6>
@@ -27,6 +35,8 @@ const Box = () => {
             <div>Join please, okay.</div>
           </div>
         </div>
+
+        {/* Market Analytics box */}
         <div className=" p-8 m-8 shadow-lg rounded-md bg-gray-50">
           <GrAnalytics className="text-5xl" />
           <h6 className="text-2xl">Market Analytics</h6>
@@ -36,6 +46,8 @@ const Box = () => {
           </div>
         </div>
       </div>
+
+      {/* growAI box */}
       <div className="grid grid-cols-4 gap-4">
         <div className=" p-8 m-8 shadow-lg rounded-md bg-gray-50">
           <GiTreeGrowth className="text-5xl" />
@@ -45,6 +57,8 @@ const Box = () => {
             <div>Start growing with us now.</div>
           </div>
         </div>
+
+        {/* Crop Monitoring box */}
         <div className=" p-8 m-8 shadow-lg rounded-md bg-gray-50">
           <PiMonitorDuotone className="text-5xl" />
           <h6 className="text-2xl">Crop Monitoring</h6>
@@ -53,6 +67,8 @@ const Box = () => {
             <div></div>
           </div>
         </div>
+
+        {/* Farmerce box */}
         <div className=" p-8 m-8 shadow-lg rounded-md bg-gray-50">
           <SiCoinmarketcap className="text-5xl" />
           <h6 className="text-2xl">Farmerce</h6>
@@ -61,6 +77,8 @@ const Box = () => {
             <div>Farming Ecommerce</div>
           </div>
         </div>
+
+        {/* Connect box */}
         <div className=" p-8 m-8 shadow-lg rounded-md bg-gray-50">
           <LiaConnectdevelop className="text-5xl" />
           <h6 className="text-2xl">Connect!</h6>

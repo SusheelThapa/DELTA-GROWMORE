@@ -3,22 +3,33 @@ import { useNavigate } from "react-router-dom";
 import apiClient from "../../services/apiClient";
 import { setToken } from "../../services/token";
 
+// interface fro tha response from the login
 interface LoginResponse {
   token: { refresh: string; access: string };
   info: { id: number; username: string };
 }
 
+/**
+ * @function LoginForm
+ * @description Form component for user login. It includes fields for username, password, and a remember me option.
+ * @returns {TSX.Element} - The form component for user login.
+ */
+
 const LoginForm = () => {
+  // State hooks to store form input values
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberme, setRememberme] = useState("");
 
+  // Hook for navigating programmatically
   const navigate = useNavigate();
 
+  // Function to handle form submission
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(username, password);
 
+    // API call to perform login
     apiClient
       .post<LoginResponse>("/auth/login/", {
         username: username,

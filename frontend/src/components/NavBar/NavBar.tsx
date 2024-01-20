@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.jpg";
 import Button from "../Button";
 
-// Footer component representing the bottom navigation section of the page
+/**
+ * Footer component representing the bottom navigation section of the page.
+ * It includes a logo, product name, navigation links, and a login button.
+ *
+ * @returns {JSX.Element} The Footer component.
+ */
 const Footer = () => {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">

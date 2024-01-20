@@ -7,6 +7,12 @@ import {
   FaPhabricator,
 } from "react-icons/fa";
 
+/**
+ * MARSummary component - displays a summary of market analysis results
+ * with different metrics in a card format.
+ *
+ * @returns {JSX.Element} The rendered MARSummary component.
+ */
 const MARSummary = () => {
   return (
     <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">

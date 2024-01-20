@@ -3,22 +3,33 @@ import apiClient from "../../services/apiClient";
 import { setToken } from "../../services/token";
 import { useNavigate } from "react-router-dom";
 
+// Interface for the response from the sign-up API
 interface SignUpResponse {
   token: { refresh: string; access: string };
   info: { id: number; username: string };
 }
 
+/**
+ * @function SignUpForm
+ * @description Form component for user registration. It includes fields for username, email, password, and confirm password.
+ * @returns {TSX.Element} - The form component for user sign-up.
+ */
 const SignUpForm = () => {
+  // State hooks to store form input values
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
+
+  // Hook for navigating programmatically
   const navigate = useNavigate();
 
+  // Function to handle form submission
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(username, email, password, confirmPassword);
 
+    // API call to register a new user
     apiClient
       .post<SignUpResponse>("/auth/register/", {
         username: username,

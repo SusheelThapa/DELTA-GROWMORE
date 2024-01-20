@@ -6,13 +6,25 @@ import apiClient from "../../services/apiClient";
 import { getToken } from "../../services/token";
 import { FaSeedling } from "react-icons/fa";
 
+/**
+ * Props for Posts component.
+ * @typedef {Object} Props
+ * @property {string} className - Additional CSS class for styling.
+ */
 interface Props {
   className: string;
 }
 
+/**
+ * A component that displays a list of posts and handles the creation of new posts.
+ *
+ * @param {Props} props - Props for the component.
+ * @returns {TSX.Element} The `Posts` component.
+ */
 const Posts = ({ className }: Props) => {
   const [posts, setPosts] = useState<Post[]>([]);
 
+  // Fetches posts on component mount
   useEffect(() => {
     console.log(`Bearer ${getToken()}`);
     apiClient
@@ -27,11 +39,17 @@ const Posts = ({ className }: Props) => {
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
+  /**
+   * Handles the click event on a post, setting the selected post and opening the modal.
+   *
+   * @param {Post} post - The post object that was clicked.
+   */
   const handlePostClick = (post: Post) => {
     setSelectedPost(post);
     setIsModalOpen(true);
   };
 
+  // Closes the modal and resets the selected post
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedPost(null);
