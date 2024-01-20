@@ -7,25 +7,25 @@ const Feature = () => {
     {
       id: 1,
       icon: <GiDiscussion className="bg-green-400 text-6xl p-3 rounded-full" />,
-      title: "Create questions",
+      title: "Answer Questions",
       description: "Lorem ipsum dolor sit amet consectetur",
     },
     {
       id: 2,
       icon: <MdInterests className="bg-yellow-300 text-6xl p-3 rounded-full" />,
-      title: "Interests",
+      title: "Interests!",
       description: "Lorem ipsum dolor sit amet consectetur",
     },
     {
       id: 3,
       icon: <SiPowerpages className="bg-red-400 text-6xl p-3 rounded-full" />,
-      title: "Business Pages",
+      title: "Business Expansion",
       description: "Lorem ipsum dolor sit amet consectetur",
     },
     {
       id: 4,
       icon: <FaRocket className="bg-gray-400 text-6xl p-2 rounded-full" />,
-      title: "Answer comparision",
+      title: "Tailored Analysis",
       description: "Lorem ipsum dolor sit amet consectetur",
     },
   ];
@@ -36,12 +36,11 @@ const Feature = () => {
           Our Features
         </h1>
         <p className="text-md text-gray-400 text-center mx-96">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-          praesentium amet ratione molestiae nulla, et fugit blanditiis quis ex
-          totam earum aperiam mollitia, non fuga perferendis officiis vitae
-          alias. Consequatur, ad placeat veritatis ea tempore in vero dolorem
-          voluptates unde obcaecati neque laborum laboriosam esse provident.
-          Veritatis facilis aliquam quasi!
+          GrowMore redefines agriculture with AI-driven precision, direct market
+          connectivity, sustainable soil management, and smart irrigation.
+          Transparent supply chains, community collaboration, resource
+          optimization, educational resources, and mobile accessibility make it
+          a comprehensive platform shaping the future of farming.
         </p>
       </div>
       <div className="m-3  mx-96 p-3 flex justify-around space-x-24">

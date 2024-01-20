@@ -11,7 +11,7 @@ const Service = () => {
       ),
       title: "Farming Community!",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpafugiat enim tempore!sit amet consectetur adipisicing elit. Culpafugiat enim tempore!",
+        "Farming community enables you to learn and connect from your peers thus making connections easier than ever! Now connect learn and earn",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Service = () => {
       ),
       title: "24/7 Support",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpafugiat enim tempore!sit amet consectetur adipisicing elit. Culpafugiat enim tempore!",
+        "Our dedicated team provides you with support all the time throughout day and night so if you ever need our services just give us a call",
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const Service = () => {
       ),
       title: "Dedicated Team",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpafugiat enim tempore!sit amet consectetur adipisicing elit. Culpafugiat enim tempore!",
+        "Here we believe teamwork is dreamwork and this is what will take us to the ladders of succes so join our team today!",
     },
   ];
   return (
@@ -41,16 +41,17 @@ const Service = () => {
         />
       </div>
       <div className="right p-4 flex space-y-6 flex-col">
-        <div className="text-4xl font-bold mb-4">Why Chose US</div>
+        <div className="text-4xl font-bold mb-2">Why Chose US</div>
         <div className="text-zinc-400 mb-4">
           <div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus nemo
-            aspernatur enim nulla dignissimos cupiditate adipisci ab aliquam rem
-            tempore.
+            Select GrowMore for cutting-edge technology, empowering farmers with
+            precision insights, sustainable practices, and a vibrant community.
+            Experience transformative agriculture, from resource optimization to
+            market connectivity
           </div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad at dolor
-            porro aspernatur mollitia pariatur?
+          <div className="mt-2">
+            Optimize farming with AI, join GrowMore for sustainable practices
+            and thriving communities.
           </div>
         </div>
         <ul>

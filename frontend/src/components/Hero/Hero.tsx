@@ -7,18 +7,18 @@ const Hero = () => {
       <div className="m-10 space-y-10 flex flex-col justify-evenly w-3/5">
         <div>
           <h1 className="my-4 text-5xl font-extrabold text-black">
-            Ask <span className="text-green-400">anything</span>
+            GrowMore: Cultivating{" "}
+            <span className="text-green-400">Success</span>
           </h1>
           <h1 className="my-4 text-5xl font-extrabold text-black">
-            anytime anywhere
+            Everytime, Everywhere.
           </h1>
         </div>
-
-        <div className="text-gray-400 text-md ">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
-          minus iure possimus nesciunt. Voluptates hic perferendis eum dicta,
-          minus dignissimos ut consequatur doloremque alias nihil magni modi
-          harum inventore vero iste libero minima, voluptatibus temporibus,
+        <div className="text-gray-400 text-md">
+          Embarking on a journey of agricultural transformation, GrowAI stands
+          as a beacon of innovation. In the vast landscape of technology, it
+          cultivates change, empowering farmers with sustainable solutions and
+          ushering in a new era of growth and prosperity in the fields.
         </div>
         <div className="flex space-x-5 items-center mt-10">
           <Button className="w-40 bg-green-600 text-white hover:bg-green-700 rounded-lg text-lg px-2 py-2 text-center">
