@@ -2,7 +2,6 @@ import Average from "../../components/CropMonitor/Average";
 import DailyIrrigation from "../../components/CropMonitor/DailyIrrigation";
 import SoilMoistureHistoryData from "../../components/CropMonitor/SoilMoistureHistoryData";
 import SoilTemperatureHistory from "../../components/CropMonitor/SoilTemperatureHistory";
-import PredictPlantDisease from "../../components/PredictPlantDisease";
 
 const CropMonitor = () => {
   return (
@@ -38,8 +37,6 @@ const CropMonitor = () => {
             <SoilMoistureHistoryData />
           </div>
         </div>
-
-        <PredictPlantDisease />
       </div>
     </>
   );
