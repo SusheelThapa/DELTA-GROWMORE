@@ -38,9 +38,15 @@ class predict(APIView):
         predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
         confidence = float(np.max(predictions[0]))
 
+        if predicted_class == 'Early Blight':
+            res = "To manage Early Blight disease in potatoes, start by identifying dark brown lesions with concentric rings on lower leaves. Remove and isolate infected plants, pruning affected leaves with sanitized tools. Maintain a clean environment by removing debris and fallen leaves. Water at the base to avoid wetting foliage, and consider applying fungicides labeled for Early Blight. Apply organic mulch, practice crop rotation, and opt for resistant potato varieties. Regular monitoring for signs of the disease and prompt intervention will help minimize its impact on the crop."
+        elif predicted_class == 'Late Blight':
+            res = "To address Late Blight disease in potatoes, begin by closely inspecting plants for dark, water-soaked lesions on leaves, usually starting at the tips. Immediately isolate and remove infected plants to prevent the spread. Prune affected foliage, ensuring tools are sanitized to avoid further contamination. Keep the surroundings clean by removing fallen leaves and debris. Opt for morning watering at the base to allow foliage to dry quickly. Consider applying fungicides specifically designed for Late Blight, following recommended guidelines. Employ organic mulch, practice crop rotation, and select potato varieties resistant to Late Blight. Regularly monitor the crop for any signs of the disease, promptly taking preventive measures as necessary to protect the potato plants."
+
         return Response({
             'class': predicted_class,
-            'confidence': confidence
+            'confidence': confidence,
+            'res':res
         })
 
 def read_file_as_image(data) -> np.ndarray:
