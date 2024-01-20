@@ -18,21 +18,22 @@ export interface Page {
 
 export interface Props {
   pages: Page[];
+  activePage: string;
 }
 
-const Homepage = ({ pages }: Props) => {
+const Homepage = ({ pages, activePage }: Props) => {
   return (
     <div className="flex">
       <Sidebar pages={pages} />
-      {true && <Dashboard />}
-      {false && <Profile />}
-      {false && <CropMonitor />}
-      {true && <MarketAnalysis />}
-      {true && <Farmer />}
-      {false && <Connect />}
-      {false && <Finance />}
-      {false && <GrowAI />}
-      {false && <Subscription />}
+      {activePage == pages[0].link && <Dashboard />}
+      {activePage == pages[1].link && <Profile />}
+      {activePage == pages[2].link && <CropMonitor />}
+      {activePage == pages[3].link && <Farmer />}
+      {activePage == pages[4].link && <MarketAnalysis />}
+      {activePage == pages[5].link && <Connect />}
+      {activePage == pages[6].link && <Finance />}
+      {activePage == pages[7].link && <GrowAI />}
+      {activePage == pages[8].link && <Subscription />}
     </div>
   );
 };
