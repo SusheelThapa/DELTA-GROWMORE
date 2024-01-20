@@ -66,8 +66,8 @@ const MarketAnalysis = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen w-full bg-gray-50">
-      <div className="bg-white p-6  w-full max-w-3xl h-[800px] overflow-auto bg-inherit">
+    <div className="flex items-center justify-center h-screen w-full bg-gray-100">
+      <div className="bg-white p-6  w-full max-w-3xl h-[800px] overflow-auto bg-inherit rounded-xl">
         <div className="flex justify-center mb-6">
           {[1, 2, 3].map((number) => (
             <StepIndicator key={number} num={number} />
@@ -75,17 +75,23 @@ const MarketAnalysis = () => {
         </div>
 
         {step === 1 && (
-          <div className="text-center">
-            <h2 className="text-xl font-bold mb-4">
-              Welcome to Market Analysis
-            </h2>
-            <button
-              onClick={handleStart}
-              className="bg-green-500 text-white px-4 py-2 rounded"
-            >
-              Start
-            </button>
-          </div>
+          <>
+            <div className="text-center">
+              <h2 className="text-4xl font-bold mb-4">
+                Welcome to Market Analysis
+              </h2>
+              <div className="text-center px-32 text-xl mt-20 text-green-700">
+              Our market analysis focuses on the Main Market, detailing its location, primary crop, last year's yield, and waste statistics. Leveraging our website analytics, we gain valuable insights into market trends, helping stakeholders make informed decisions.
+            </div>
+              <button
+                onClick={handleStart}
+                className="bg-green-500 text-white px-4 py-2 rounded mt-14 w-[10rem] text-xl"
+              >
+                Start
+              </button>
+            </div>
+
+          </>
         )}
 
         {step === 2 && (
