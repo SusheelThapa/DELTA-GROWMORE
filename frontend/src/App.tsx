@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
@@ -17,7 +17,7 @@ import Homepage from "./components/Homepage";
 import MarketAnalysisResult from "./pages/MarketAnalsisResult";
 import Sidebar from "./components/Sidebar";
 import AuthPage from "./pages/AuthPage";
-
+import Form from "./components/Subscription/Form.jsx"
 const pages = [
   {
     name: "Dashboard",
@@ -79,6 +79,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<AuthPage />} />
+          <Route path="/form" element={<Form />} />
           <Route
             path="/dashboard"
             element={<Homepage pages={pages} activePage={pages[0].link} />}
