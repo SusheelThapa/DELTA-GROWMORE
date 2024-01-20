@@ -16,6 +16,7 @@ import { GiFarmer } from "react-icons/gi";
 import Homepage from "./components/Homepage";
 import MarketAnalysisResult from "./pages/MarketAnalsisResult";
 import Sidebar from "./components/Sidebar";
+import AuthPage from "./pages/AuthPage";
 
 const pages = [
   {
@@ -77,6 +78,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<AuthPage />} />
           <Route
             path="/dashboard"
             element={<Homepage pages={pages} activePage={pages[0].link} />}
