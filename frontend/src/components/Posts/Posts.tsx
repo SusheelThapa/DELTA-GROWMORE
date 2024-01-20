@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import Modal from "../Model";
 import CreatePost from "./CreatePost";
 import SinglePost, { Post } from "./SinglePost";
-import apiClient from "../../services/api/apiClient";
-import { getToken } from "../../services/token/token";
+import apiClient from "../../services/apiClient";
+import { getToken } from "../../services/token";
 
 interface Props {
   className: string;

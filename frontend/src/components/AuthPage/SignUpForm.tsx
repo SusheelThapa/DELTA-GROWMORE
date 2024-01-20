@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import apiClient from "../../services/api/apiClient";
-import { setToken } from "../../services/token/token";
+import apiClient from "../../services/apiClient";
+import { setToken } from "../../services/token";
 import { useNavigate } from "react-router-dom";
 
 interface SignUpResponse {

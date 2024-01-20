@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import apiClient from "../../services/api/apiClient";
-import { setToken } from "../../services/token/token";
+import apiClient from "../../services/apiClient";
+import { setToken } from "../../services/token";
 
 interface LoginResponse {
   token: { refresh: string; access: string };
