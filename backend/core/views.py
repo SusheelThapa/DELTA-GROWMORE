@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 from django.contrib.auth import authenticate
@@ -12,7 +13,39 @@ from .renderers import UserRenderer
 from .models import User, Post, PostLike, PostComment
 from .serializers import UserRegisterationSerializer, UserLoginSerializer, UserProfileSerializer, UserPostCreateSerializer, PostViewSerializer, PostCommentSerializer, PostLikeSerializer
 
-from .ml_predict import predict_disease
+import numpy as np
+import tensorflow as tf
+from io import BytesIO
+from PIL import Image
+
+from django.conf import settings
+temp = os.path.join(settings.BASE_DIR, "core/")
+
+MODEL = tf.keras.models.load_model(temp+"ml_model")
+CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
+
+
+class predict(APIView):
+    def post(self, request):
+        if 'image' not in request.FILES:
+            return Response({'error': 'No image provided'}, status=400)
+
+        image = request.FILES['image']
+        image_array = read_file_as_image(image.read())
+        img_batch = np.expand_dims(image_array, 0)
+
+        predictions = MODEL.predict(img_batch)
+        predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
+        confidence = float(np.max(predictions[0]))
+
+        return Response({
+            'class': predicted_class,
+            'confidence': confidence
+        })
+
+def read_file_as_image(data) -> np.ndarray:
+    image = np.array(Image.open(BytesIO(data)))
+    return image
 
 # Utility function to generate JWT tokens for a user``
 def get_tokens_for_user(user):
@@ -118,9 +151,3 @@ class KhaltiPaymentView(APIView):
         print(response.text)
         return Response(response.text)
     
-
-# View for prediction using ML model.
-class PredictionView(APIView):
-    def post(self, request):
-        result = predict_disease()
-        Response({'result':result})
