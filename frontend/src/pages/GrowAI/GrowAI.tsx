@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Chat from "../../components/Chat";
 import SendMessage from "../../components/SendMessage";
+import { askGrowAI } from "../../services/askGrowAI";
 
 export interface Message {
   username: string;
@@ -30,20 +31,14 @@ const GrowAI = () => {
       loadingMessage,
     ]);
 
-    // Simulate an API call
-    setTimeout(() => {
-      const growAIMessage = {
-        username: "GrowAI",
-        message: "This is a response from GrowAI",
-      };
+    const aiMessage = await askGrowAI(message);
+    const growAIMessage = { username: "GrowAI", message: aiMessage };
 
-      setMessages((currentMessages) => {
-        return currentMessages.map((m, index) =>
-          index === currentMessages.length - 1 ? growAIMessage : m
-        );
-      });
-    }, 2000);
-
+    setMessages((currentMessages) => {
+      return currentMessages.map((m, index) =>
+        index === currentMessages.length - 1 ? growAIMessage : m
+      );
+    });
     setMessage("");
   };
 
