@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
 
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
 import { FaSignOutAlt } from "react-icons/fa";
@@ -76,6 +77,7 @@ const App = () => {
     <>
       <Router>
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Homepage pages={pages} />} />
           <Route
             path="/market-analysis/result"
