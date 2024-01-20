@@ -2,7 +2,7 @@ from django.urls import path
 
 from rest_framework_simplejwt import views as jwt_views
 
-from .views import UserRegistrationView, UserLoginView, UserProfileView, PostView, KhaltiPaymentView, CommentCreateView, LikeCreateView, predict
+from .views import UserRegistrationView, UserLoginView, UserProfileView, PostView, KhaltiPaymentView, CommentCreateView, LikeCreateView, predict, MonitoringView
 
 urlpatterns = [
     path('auth/register/', UserRegistrationView.as_view()),
@@ -14,4 +14,5 @@ urlpatterns = [
     path('api/post/like/', LikeCreateView.as_view()),
     path('api/khalti/', KhaltiPaymentView.as_view()),
     path('api/predict/', predict.as_view()),
+    path('api/monitor/', MonitoringView.as_view()),
 ]

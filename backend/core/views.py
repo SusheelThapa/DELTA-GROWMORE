@@ -151,3 +151,9 @@ class KhaltiPaymentView(APIView):
         print(response.text)
         return Response(response.text)
     
+# View for fetching weather data.
+class MonitoringView(APIView):
+    def get(self, request):
+        url = "https://api.openweathermap.org/data/2.5/weather?lat=26.816667&lon=87.283333&appid=4ea131fa3e5db7576491b75e15a9f65f"
+        response = requests.request("GET", url)
+        return Response({'weather':response.text}, status=status.HTTP_200_OK)
