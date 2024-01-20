@@ -12,6 +12,9 @@ import { GoCopilot } from "react-icons/go";
 import { ImStatsDots } from "react-icons/im";
 import { GiFarmer } from "react-icons/gi";
 import Homepage from "./components/Homepage";
+import MarketAnalysis from "./pages/MarketAnalysis";
+import MarketAnalysisResult from "./pages/MarketAnalsisResult";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   // This will contain all the pages of our project
@@ -74,6 +77,15 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/dashboard" element={<Homepage pages={pages} />} />
+          <Route
+            path="/market-analysis/result"
+            element={
+              <div className="flex">
+                <Sidebar pages={pages} />
+                <MarketAnalysisResult />
+              </div>
+            }
+          />
         </Routes>
       </Router>
     </>

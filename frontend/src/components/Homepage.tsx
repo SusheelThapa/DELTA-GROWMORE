@@ -24,11 +24,11 @@ const Homepage = ({ pages }: Props) => {
   return (
     <div className="flex">
       <Sidebar pages={pages} />
-      {false && <Dashboard />}
-      {true && <Profile />}
+      {true && <Dashboard />}
+      {false && <Profile />}
       {false && <CropMonitor />}
-      {false && <Farmer />}
-      {false && <MarketAnalysis />}
+      {true && <MarketAnalysis />}
+      {true && <Farmer />}
       {false && <Connect />}
       {false && <Finance />}
       {false && <GrowAI />}
