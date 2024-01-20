@@ -2,21 +2,19 @@ import Average from "../../components/CropMonitor/Average";
 import DailyIrrigation from "../../components/CropMonitor/DailyIrrigation";
 import SoilMoistureHistoryData from "../../components/CropMonitor/SoilMoistureHistoryData";
 import SoilTemperatureHistory from "../../components/CropMonitor/SoilTemperatureHistory";
+import PredictPlantDisease from "../../components/PredictPlantDisease";
 
 const CropMonitor = () => {
-
   return (
     <>
       <div className="flex flex-col w-full">
         <div className="bg-gray-200 w-full h-[80%] flex flex-row justify-between p-3">
-          <div className="w-[49%] flex flex-col gap-6">
+          <div className="w-[49%] flex flex-col justify gap-6">
             <Average />
             <DailyIrrigation />
           </div>
           <div className="bg-white w-[49%] rounded-lg flex justify-center items-center flex-col">
-            <div className="text-3xl text-center font-bold">
-              Field Map
-            </div>
+            <div className="text-3xl text-center font-bold">Field Map</div>
             <hr />
             <div className="h-[80%] w-[80%] mt-2">
               <iframe
@@ -41,35 +39,7 @@ const CropMonitor = () => {
           </div>
         </div>
 
-        <div className="prediction w-full bg-gray-200 h-[50rem] flex justify-center mt-[-15rem]">
-          <div className="predictCard w-[97%] bg-white rounded-lg mb-[5rem]">
-            <div className="upload h-[3rem] w-full">
-              <div className="header  m-8 flex flex-row justify-between">
-                <div className="text-3xl font-bold">Predict Disease</div>
-                <div className="upload">
-
-                  <label
-                    htmlFor="fileInput"
-                    className="cursor-pointer bg-green-500 text-white py-2 px-4 rounded-md"
-                  >
-                    Click to upload a file
-                  </label>
-                  <input
-                    type="file"
-                    id="fileInput"
-                    className="hidden"
-                  />
-
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="predictedOutput mx-[2rem] my-5 w-full text-lg">
-              <span className="font-bold">Output:</span>
-            </div>
-          </div>
-        </div>
-
+        <PredictPlantDisease />
       </div>
     </>
   );
