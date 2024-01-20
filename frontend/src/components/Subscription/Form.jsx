@@ -4,7 +4,7 @@ import axios from "axios";
 import khaltiLogo from "../images/khalti.svg";
 
 const Form = () => {
-  const [amount, setAmount] = useState("700");
+  const [amount, setAmount] = useState("70000");
   const [returnUrl, setReturnUrl] = useState("http://localhost:5173/dashboard");
 
   const handleSubmit = async (e) => {
@@ -23,8 +23,6 @@ const Form = () => {
 
       const jsonData = JSON.parse(data);
 
-      console.log("Response from the server:", jsonData);
-      //   console.log(data.response.payment_url);
       window.location.replace(jsonData.payment_url);
     } catch (error) {
       console.error("Error sending data:", error);
