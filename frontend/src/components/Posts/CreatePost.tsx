@@ -20,10 +20,10 @@ const CreatePost = ({ onPostSubmit }: Props) => {
   };
 
   return (
-    <div className="mx-32 my-6 bg-white rounded-3xl shadow-md border border-gray-300 p-4">
-      <h2 className="text-lg font-semibold mb-2 text-gray-700">Create Post</h2>
+    <div className="mx-64 my-6 bg-white rounded-3xl shadow-md border border-gray-300 p-6 ">
+      <h2 className="text-2xl font-semibold mb-3 text-gray-700">Create Post</h2>
       <textarea
-        className="w-full h-28 border border-gray-300 rounded-md p-3 resize-none focus:outline-none focus:ring-2 focus:ring-blue-200"
+        className="w-full text-lg  h-28 border border-gray-300 rounded-md p-3 resize-none focus:outline-none focus:ring-2 focus:ring-green-200"
         placeholder="What's on your mind?"
         value={postContent}
         onChange={(e) => setPostContent(e.target.value)}
@@ -34,7 +34,7 @@ const CreatePost = ({ onPostSubmit }: Props) => {
             htmlFor="image-upload"
             className="cursor-pointer flex items-center"
           >
-            <FaImage className="text-lg text-blue-600" />
+            <FaImage className="text-lg text-green-600" />
             <span className="ml-1 text-sm text-gray-700">Photo/Video</span>
           </label>
           <input
@@ -57,7 +57,7 @@ const CreatePost = ({ onPostSubmit }: Props) => {
           )}
         </div>
         <button
-          className={`bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 ${
+          className={`bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 ${
             !postContent ? "opacity-50 cursor-not-allowed" : ""
           }`}
           onClick={handleSubmit}
