@@ -1,13 +1,11 @@
-
-# <p align="center">growMore</p>
+# <p align="center">dharan-growmore</p>
 
 <p align="center">
-    <img src="#" width=250 height=250 />
+    <img src="./frontend/src/images/logo.jpg" width=250 height=250 />
 </p>
-
 <p align="center">
     <p align="center">
-        <a href="https://github.com/SusheelThapa/growMore/" target="blank">
+        <a href="https://github.com/SusheelThapa/dharan-growmore/" target="blank">
             <img src="https://img.shields.io/github/watchers/SusheelThapa/growMore?style=for-the-badge&logo=appveyor" alt="Watchers"/>
         </a>
         <a href="https://github.com/SusheelThapa/growMore/fork" target="blank">
@@ -32,7 +30,7 @@
     </p>
 </p>
 
-[growMore](https://github.com/SusheelThapa/growMore)...
+[dharan-growmore](https://github.com/SusheelThapa/dharan-growmore:) A transformative agricultural platform at the intersection of innovation and sustainability. Harnessing the power of AI, GrowMore connects farmers directly to markets, offers precision insights for resource optimization, and promotes sustainable practices. With a focus on community collaboration, transparent supply chains, and continuous education, GrowMore is reshaping the future of farming.
 
 ## Table of Contents
 
@@ -45,8 +43,11 @@
 - [License](#license)
 
 ## Features
-
-<!-- TODO: Feature section will be added once the project is ready -->
+ 
+- Farming Assistance
+- Monitoring System and Analytics
+- Active Collaboration
+- growAI
 
 ## Demo
 
@@ -56,14 +57,17 @@
 
 ### Prerequisites
 
-<!-- TODO: Will be updated soon -->
+Ensure you have python installed on your system. You can download it from python.org.
+
+Before running, dharan-growmore, you will need an OpenAI API key if the project utilizes OpenAI's services. You can obtain an API key by registering on the OpenAI platform.
+
 
 ### Setup
 
 - Clone the repository:
 
   ```bash
-  git clone https://github.com/your-username/growMore.git
+  git clone https://github.com/your-username/dharan-growmore.git
   ```
 
 #### Frontend
@@ -107,15 +111,30 @@
    pip install -r requirements.txt
    ```
 
-4. Running the backend server:
+4. Importing Migrations
+
+    ```bash
+    python manage.py migrate
+    ```
+    
+
+
+5. Running the backend server:
 
    ```bash
-   python3 manage.py runserver
+   python manage.py runserver
    ```
+
 
 ## Usage
 
-<!-- TODO: Will be added after project completion -->
+### Usage of GrowMore:
+
+- **Connect:** Link farmers, agribusinesses, and investors for collaborative growth.
+- **Monitor:** AI-driven insights for precise crop management and resource optimization.
+- **Trade:** Direct market access, fostering transparent and ethical supply chains.
+- **Learn:** Access educational resources for continuous agricultural knowledge and improvement.
+- **Grow:** Sustainable practices and community support for thriving agriculture.
 
 ## Dependencies
 
@@ -129,7 +148,7 @@
 
 ## Contributing
 
-We welcome contributions to enhance and improve [growMore]()! Feel free to submit issues, feature requests, or pull requests. Please adhere to our Code of Conduct.
+We welcome contributions to enhance and improve [dharan-growmore]()! Feel free to submit issues, feature requests, or pull requests. Please adhere to our Code of Conduct.
 
 ## License
 
