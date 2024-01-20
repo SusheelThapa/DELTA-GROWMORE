@@ -1,15 +1,21 @@
 import { FaThumbsUp, FaRegCommentAlt } from "react-icons/fa";
 import { IoMdSend } from "react-icons/io";
-import Comment, { CommentProps } from "../Comment/Comment";
+import Comment from "../Comment/Comment";
 
 export interface Post {
-  username: string;
-  date: string;
+  id: number;
+  user: { username: string };
   description: string;
-  postImageURL: string;
-  noOfLikes: number;
-  noOfComments: number;
-  comments?: CommentProps[];
+  created_at: string;
+  img: string;
+  postcomment_set: Comment[];
+}
+
+export interface Comment {
+  id: number;
+  post: number;
+  comment: string;
+  commented_by: number;
 }
 
 interface Props {
@@ -35,8 +41,12 @@ const Post = ({ post, inModal = false }: Props) => {
             alt="Profile"
           />
           <div>
-            <p className="text-sm font-medium text-gray-800">{post.username}</p>
-            <p className="text-xs text-gray-500">{post.date}</p>
+            <p className="text-sm font-medium text-gray-800">
+              {post.user.username}
+            </p>
+            <p className="text-xs text-gray-500">
+              {post.created_at.slice(0, 10)}
+            </p>
           </div>
         </div>
 
@@ -44,18 +54,18 @@ const Post = ({ post, inModal = false }: Props) => {
 
         <img
           className={`mt-3 w-full rounded-lg ${imageClassName}`}
-          src={post.postImageURL}
+          src={`http://localhost:8000/${post.img}/`}
           alt="Post"
         />
 
         <div className="flex justify-between items-center mt-3 text-gray-500">
           <button className="flex items-center space-x-1 hover:text-blue-600">
             <FaThumbsUp />
-            <span>{post.noOfLikes}</span>
+            <span>{}</span>
           </button>
           <button className="flex items-center space-x-1 hover:text-blue-600">
             <FaRegCommentAlt />
-            <span>{post.noOfComments}</span>
+            <span>{}</span>
           </button>
         </div>
 
@@ -72,14 +82,14 @@ const Post = ({ post, inModal = false }: Props) => {
       </div>
       {inModal && (
         <div>
-          {post.comments && (
+          {post.postcomment_set && (
             <div className="mt-4">
               <h3 className="text-md font-semibold mb-2 ml-6">Comments</h3>
-              {post.comments.map(({ username, comment, date }, index) => (
+              {post.postcomment_set.map(({ comment, commented_by }, index) => (
                 <Comment
-                  username={username}
+                  username={`${commented_by}`}
                   comment={comment}
-                  date={date}
+                  date={`${new Date().getFullYear()}`}
                   key={index}
                 />
               ))}

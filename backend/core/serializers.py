@@ -55,6 +55,7 @@ class PostViewSerializer(serializers.ModelSerializer):
     postlike_set = PostLikeSerializer(many=True)
     like_count = serializers.SerializerMethodField()
     is_liked = serializers.SerializerMethodField()
+    user=UserProfileSerializer()
     class Meta:
         model = Post
         fields = ['id', 'user', 'description', 'created_at', 'img', 'postcomment_set', 'postlike_set', 'like_count', 'is_liked']

@@ -1,95 +1,130 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import apiClient from "../../services/api/apiClient";
+import { setToken } from "../../services/token/token";
+import { useNavigate } from "react-router-dom";
 
-const SignUpForm = () => {
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setconfirmPassword] = useState("");
-    return (
-        <div className="flex justify-center items-center ">
-            <div className="bg-white  w-[40rem] border-4 rounded-xl shadow-2xl p-8">
-                <form className=" mx-auto space-y-6">
-                    <div className="mb-6">
-                        <label
-                            htmlFor="username"
-                            className="block text-2xl font-medium text-gray-600 mb-3"
-                        >
-                            Username
-                        </label>
-                        <input
-                            type="text"
-                            id="username"
-                            className="mt-1 text-lg p-3 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                            onChange={(e) => {
-                                setUsername(e.target.value);
-                            }}
-                            required
-                        />
-                    </div>
-                    <div className="mb-6">
-                        <label
-                            htmlFor="email"
-                            className="block text-2xl font-medium text-gray-600 mb-3"
-                        >
-                            Email
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            className="mt-1 text-lg p-3 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="email@gmail.com"
-                            onChange={(e) => {
-                                setEmail(e.target.value);
-                            }}
-                            required
-                        />
-                    </div>
-                    <div className="mb-6">
-                        <label
-                            htmlFor="password"
-                            className="block text-2xl font-medium text-gray-600 mb-3"
-                        >
-                            Password
-                        </label>
-                        <input
-                            type="password"
-                            id="password"
-                            className="mt-1 text-lg p-3 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                            onChange={(e) => {
-                                setPassword(e.target.value);
-                            }}
-                            required
-                        />
-                    </div>
-                    <div className="mb-6">
-                        <label
-                            htmlFor="confirmPassword"
-                            className="block text-2xl font-medium text-gray-600 mb-3"
-                        >
-                            Confirm password
-                        </label>
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            className="mt-1 p-3 w-full text-lg border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                            onChange={(e) => {
-                                setconfirmPassword(e.target.value);
-                            }}
-                            required
-                        />
-                    </div>
-
-                    <div className=""></div>
-                    <button
-                        type="submit"
-                        className="w-full text-2xl bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md py-3"
-                    >
-                        Submit
-                    </button>
-                </form>
-            </div>
-        </div>
-    )
+interface SignUpResponse {
+  token: { refresh: string; access: string };
+  info: { id: number; username: string };
 }
 
-export default SignUpForm
+const SignUpForm = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setconfirmPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(username, email, password, confirmPassword);
+
+    apiClient
+      .post<SignUpResponse>("/auth/register/", {
+        username: username,
+        password: password,
+      })
+      .then(({ data }) => {
+        setToken(data.token.access);
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+        navigate("/login");
+      })
+      .finally(() => {
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setconfirmPassword("");
+      });
+  };
+
+  return (
+    <div className="flex justify-center items-center ">
+      <div className="bg-white  w-[40rem] border-4 rounded-xl shadow-2xl p-8">
+        <form className=" mx-auto space-y-6" onSubmit={handleFormSubmit}>
+          <div className="mb-6">
+            <label
+              htmlFor="username"
+              className="block text-2xl font-medium text-gray-600 mb-3"
+            >
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              className="mt-1 text-lg p-3 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500"
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="email"
+              className="block text-2xl font-medium text-gray-600 mb-3"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="mt-1 text-lg p-3 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500"
+              placeholder="email@gmail.com"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="password"
+              className="block text-2xl font-medium text-gray-600 mb-3"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              className="mt-1 text-lg p-3 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="confirmPassword"
+              className="block text-2xl font-medium text-gray-600 mb-3"
+            >
+              Confirm password
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              className="mt-1 p-3 w-full text-lg border rounded-md focus:ring-blue-500 focus:border-blue-500"
+              onChange={(e) => {
+                setconfirmPassword(e.target.value);
+              }}
+              required
+            />
+          </div>
+
+          <div className=""></div>
+          <button
+            type="submit"
+            className="w-full text-2xl bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md py-3"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default SignUpForm;
