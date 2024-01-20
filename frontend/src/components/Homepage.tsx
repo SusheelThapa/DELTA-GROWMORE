@@ -1,5 +1,5 @@
 import Connect from "../pages/Connect";
-import CropMonitor from "../pages/CropMonitor";
+import CropMonitor from "../pages/DataAnalytics";
 import Dashboard from "../pages/Dashboard";
 import Farmer from "../pages/Farmer";
 import Finance from "../pages/Finance";

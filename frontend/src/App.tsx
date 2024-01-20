@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
@@ -18,7 +18,7 @@ import Homepage from "./components/Homepage";
 import MarketAnalysisResult from "./pages/MarketAnalsisResult";
 import Sidebar from "./components/Sidebar";
 import AuthPage from "./pages/AuthPage";
-import Form from "./components/Subscription/Form.jsx"
+import Form from "./components/Subscription/Form.jsx";
 const pages = [
   {
     name: "Dashboard",
@@ -31,8 +31,8 @@ const pages = [
     icon: AiOutlineUser,
   },
   {
-    name: "Crop Monitor",
-    link: "/crop-monitor",
+    name: "Data Analytics",
+    link: "/data-analytics",
     icon: ImStatsDots,
   },
   {
@@ -95,7 +95,7 @@ const App = () => {
             element={<Homepage pages={pages} activePage={pages[1].link} />}
           />
           <Route
-            path="/crop-monitor"
+            path="/data-analytics"
             element={<Homepage pages={pages} activePage={pages[2].link} />}
           />
           <Route
