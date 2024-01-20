@@ -1,6 +1,13 @@
+/**
+ * @function FarmFruitVeg
+ * @description Component displaying a selection of fruits and vegetables.
+ * It includes images, prices, and ratings for each item, along with a shopping cart button.
+ *
+ * @returns {TSX.Element} - The FarmFruitVeg component.
+ */
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
-
+// Sample data for fruits and vegetables
 const items = [
   {
     id: 1,
@@ -67,7 +74,13 @@ const items = [
     rating: 4.5,
   },
 ];
-
+/**
+ * @function renderStars
+ * @description Helper function to render star icons based on item rating.
+ *
+ * @param {number} rating - The rating of the item.
+ * @returns {TSX.Element[]} - Array of star icons.
+ */
 const FarmFruitVeg = () => {
   const renderStars = (rating: number) => {
     const stars = [];

@@ -3,6 +3,16 @@ import { IoMdSend } from "react-icons/io";
 import Comment from "../Comment/Comment";
 import { generateRandomNumber } from "../../services/generateRandomNumber";
 
+/**
+ * Represents a post.
+ * @typedef {Object} Post
+ * @property {number} id - The ID of the post.
+ * @property {{ username: string }} user - The user who created the post.
+ * @property {string} description - The description of the post.
+ * @property {string} created_at - The creation date of the post.
+ * @property {string} img - The image URL of the post.
+ * @property {Comment[]} postcomment_set - The set of comments on the post.
+ */
 export interface Post {
   id: number;
   user: { username: string };
@@ -12,6 +22,14 @@ export interface Post {
   postcomment_set: Comment[];
 }
 
+/**
+ * Represents a comment.
+ * @typedef {Object} Comment
+ * @property {number} id - The ID of the comment.
+ * @property {number} post - The ID of the post the comment is associated with.
+ * @property {string} comment - The text of the comment.
+ * @property {number} commented_by - The ID of the user who commented.
+ */
 export interface Comment {
   id: number;
   post: number;
@@ -19,11 +37,23 @@ export interface Comment {
   commented_by: number;
 }
 
+/**
+ * Props for the Post component.
+ * @typedef {Object} Props
+ * @property {Post} post - The post data.
+ * @property {boolean} [inModal=false] - Flag to indicate if the post is displayed in a modal.
+ */
 interface Props {
   post: Post;
   inModal?: boolean;
 }
 
+/**
+ * A component that displays an individual post with its details, comments, and interaction buttons.
+ *
+ * @param {Props} props - Props for the component.
+ * @returns {TSX.Element} The `Post` component.
+ */
 const Post = ({ post, inModal = false }: Props) => {
   const profileImage =
     "https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=";

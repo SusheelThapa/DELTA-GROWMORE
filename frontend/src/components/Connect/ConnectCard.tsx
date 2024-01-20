@@ -2,6 +2,15 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
 import { SiFacebook } from "react-icons/si";
 
+/**
+ * Props for the ConnectCard component.
+ * @typedef {Object} Props
+ * @property {Object} cardData - The data to be displayed in the card.
+ * @property {string} cardData.companyName - The name of the company.
+ * @property {string[]} [cardData.tags] - An optional array of tags associated with the company.
+ * @property {string} cardData.companyDesc - A brief description of the company.
+ * @property {string} cardData.img - The URL of the company's image.
+ */
 interface Props {
   cardData: {
     companyName: string;
@@ -11,6 +20,13 @@ interface Props {
   };
 }
 
+/**
+ * A card component that displays information about a company, including its name,
+ * description, image, optional tags, and social media icons.
+ *
+ * @param {Props} props - The props for the component.
+ * @returns {TSX.Element} The ConnectCard component.
+ */
 const ConnectCard = ({ cardData }: Props) => {
   return (
     <div className="card w-[62rem] h-[15rem] rounded-2xl flex flex-row shadow-xl border my-2 mx-16rem bg-white hover:border-2 hover:border-gray-300">

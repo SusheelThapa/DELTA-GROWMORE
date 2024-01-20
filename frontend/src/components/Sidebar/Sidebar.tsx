@@ -4,12 +4,26 @@ import { HiMenuAlt3 } from "react-icons/hi";
 
 import { Page } from "../Homepage";
 
-// Interface defining the props for the Sidebar component
+/**
+ * Defines the shape of the props expected by the Sidebar component.
+ * @typedef {Object} Props
+ * @property {Page[]} pages - Array of page objects for sidebar navigation.
+ */
 interface Props {
   pages: Page[];
 }
 
-// Functional component representing a collapsible sidebar navigation
+/**
+ * Sidebar component providing a collapsible navigation menu.
+ *
+ * This component renders a list of navigation links based on the `pages` prop.
+ * It features a toggle button to open or close the sidebar, and dynamically adjusts
+ * its width based on its open state. Each navigation link includes an icon and
+ * a label that are defined in the `Page` type.
+ *
+ * @param {Props} props - Props for the Sidebar component.
+ * @returns {JSX.Element} The rendered Sidebar component.
+ */
 const Sidebar = ({ pages }: Props) => {
   // State variable to track the open/closed state of the sidebar
   const [open, setOpen] = useState(true);

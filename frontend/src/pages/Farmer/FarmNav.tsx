@@ -1,6 +1,24 @@
+/**
+ * @function FarmNav
+ * @description Component representing the navigation bar of the farm products page.
+ * It includes a logo, a search bar, and icons for user and shopping cart with a notification badge.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} props.number - The notification number for the shopping cart.
+ *
+ * @returns {TSX.Element} - The FarmNav component.
+ */
 import { IoIosSearch } from "react-icons/io";
 import { FaUser, FaShoppingCart } from "react-icons/fa";
-
+/**
+ * @function FarmNav
+ * @description Component rendering the navigation bar with logo, search bar, and user/shopping cart icons.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} props.number - The notification number for the shopping cart.
+ *
+ * @returns {TSX.Element} - The FarmNav component.
+ */
 interface Props {
   number: string;
 }

@@ -1,7 +1,16 @@
+/**
+ * @file ProfileHero.tsx
+ * @description Component representing the hero section of the user profile.
+ */
 import susheel from "../../images/susheel.jpg";
 import { AiOutlineAim } from "react-icons/ai";
 import { MdAppBlocking } from "react-icons/md";
-
+/**
+ * @function ProfileHero
+ * @description Component representing the hero section of the user profile.
+ *
+ * @returns {TSX.Element} - The ProfileHero component.
+ */
 const ProfileHero = () => {
   return (
     <div>

@@ -1,11 +1,17 @@
-import { Message } from "../../pages/GrowAI/GrowAI";
 import { FiUser } from "react-icons/fi";
 import { FaRobot } from "react-icons/fa";
+import { Message } from "../../pages/GrowAI/GrowAI";
 
 interface Props {
   messages: Message[];
 }
 
+/**
+ * @function Chat
+ * @description A component for displaying chat messages, distinguishing between user and bot messages.
+ * @param {Props} { messages } - Props containing an array of message objects.
+ * @returns {JJX.Element} - A chat interface that displays a list of messages.
+ */
 const Chat = ({ messages }: Props) => {
   if (messages.length === 0) {
     return (

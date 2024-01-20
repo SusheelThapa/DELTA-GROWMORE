@@ -8,19 +8,29 @@ interface Props {
   results: MARResult[];
 }
 
+/**
+ * MARTable component - renders a table displaying market analysis results.
+ *
+ * @param {Props} props - The props object containing the market analysis results.
+ * @returns {TSX.Element} The rendered table component.
+ */
 const MARTable = ({ results }: Props) => {
   return (
     <div className="w-full mt-10  py-4">
       <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-20">
         <table className="w-full leading-normal">
           <thead>
+            {/* Table headers */}
             <tr>
+              {/* Serial Number */}
               <th className="px-6 py-4 border-b-2 border-gray-300 bg-gray-100 text-left text-lg font-semibold text-gray-700 uppercase tracking-wider">
                 S.No
               </th>
+              {/* Data Stream */}
               <th className="px-6 py-4 border-b-2 border-gray-300 bg-gray-100 text-left text-lg font-semibold text-gray-700 uppercase tracking-wider">
                 Data Stream
               </th>
+              {/* Indicator */}
               <th className="px-6 py-4 border-b-2 border-gray-300 bg-gray-100 text-left text-lg font-semibold text-gray-700 uppercase tracking-wider">
                 Comment
               </th>
@@ -30,6 +40,7 @@ const MARTable = ({ results }: Props) => {
             </tr>
           </thead>
           <tbody>
+            {/* Mapping through the results to create table rows */}
             {results.map(({ dataStream, comment, indicator }, index) => {
               return (
                 <tr
@@ -52,6 +63,7 @@ const MARTable = ({ results }: Props) => {
                     {comment}
                   </td>
                   <td className="px-6 py-6 border-b bg-transparent border-gray-300  text-lg">
+                    {/* Indicator display */}
                     <span
                       className={`relative inline-block px-3 py-1 ${
                         indicator === "Positive"

@@ -1,11 +1,27 @@
 import { ReactNode } from "react";
 
+/**
+ * Props for the Modal component.
+ * @typedef {Object} Props
+ * @property {ReactNode} children - The content to be displayed inside the modal.
+ * @property {boolean} isOpen - Boolean indicating whether the modal is open or not.
+ * @property {() => void} onClose - Function to be called to close the modal.
+ */
 interface Props {
   children: ReactNode;
   isOpen: boolean;
   onClose: () => void;
 }
 
+/**
+ * Modal component which is a reusable UI element for displaying content in a modal dialog.
+ *
+ * @param {Props} props - The props for the Modal component.
+ * @param {ReactNode} props.children - The content to be displayed inside the modal.
+ * @param {boolean} props.isOpen - Boolean indicating whether the modal is open or not.
+ * @param {() => void} props.onClose - Function to be called to close the modal.
+ * @returns {JSX.Element|null} The Modal component if `isOpen` is true; otherwise null.
+ */
 const Modal = ({ children, isOpen, onClose }: Props) => {
   if (!isOpen) return null;
 

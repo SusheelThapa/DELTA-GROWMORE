@@ -1,7 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
+/**
+ * Component for displaying a premium pricing plan.
+ *
+ * This component presents details of a premium pricing plan including the plan name, description, price, and a list of exclusive features.
+ * Users can toggle to view or hide the list of features. It also includes a 'Buy Now' button for the purchasing process.
+ *
+ * @returns {JSX.Element} The rendered PricingCardPremium component.
+ */
 const PricingCardPremium = () => {
   const [viewBenefits, setViewBenefits] = useState(true);
+  
   const features = [
     "Restore up to 3 day streak",
     "Customizable leaderboard",
@@ -9,6 +19,7 @@ const PricingCardPremium = () => {
     "Streak Email Notification",
     "Access Private Resources ",
   ];
+
   return (
     <div
       className="h-[35rem] shadow-md rounded-md w-[22rem] bg-gradient-to-r overflow-hidden flex flex-col my-auto"

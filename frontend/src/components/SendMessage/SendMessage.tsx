@@ -2,15 +2,35 @@ import { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import { FiMic, FiImage, FiFile } from "react-icons/fi";
 
+/**
+ * Props for the SendMessage component.
+ *
+ * @typedef {Object} Props
+ * @property {(message: string, messageType: string) => void} handleSendMessage - Function to handle the sending of messages.
+ * @property {string} message - The current message input value.
+ * @property {(message: string) => void} setMessage - Function to set the current message.
+ */
 interface Props {
   handleSendMessage: (message: string, messageType: string) => void;
   message: string;
   setMessage: (message: string) => void;
 }
 
+/**
+ * Component for sending messages.
+ * It allows sending of text messages and uploading files like images, audio, and other files.
+ *
+ * @param {Props} props - The props for the SendMessage component.
+ * @returns {TSX.Element} The SendMessage component.
+ */
 const SendMessage = ({ handleSendMessage, message, setMessage }: Props) => {
   const [file, setFile] = useState(null);
 
+  /**
+   * Handles the change event for file input.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} e - The change event from the file input.
+   */
   const onFileChange = (e) => {
     setFile(e.target.files[0]);
   };

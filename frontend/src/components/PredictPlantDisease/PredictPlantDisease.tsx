@@ -2,10 +2,21 @@ import React, { useState } from "react";
 
 import apiClient from "../../services/apiClient";
 
+/**
+ * Component for predicting plant diseases based on an image upload.
+ * Allows users to upload an image of a plant and sends it to the backend to diagnose potential diseases.
+ * Displays the prediction result including disease name, confidence level, and recommendations.
+ */
 const PredictPlantDisease = () => {
   const [imagePreview, setImagePreview] = useState<string>("");
   const [output, setOutput] = useState<string>("");
 
+  /**
+   * Handles the change event of the file input.
+   * Sets the image preview once a file is selected.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} event - The change event from the file input.
+   */
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -17,6 +28,10 @@ const PredictPlantDisease = () => {
     }
   };
 
+  /**
+   * Sends the selected image to the backend for disease prediction.
+   * Extracts and displays the result from the backend response.
+   */
   const sendImageToBackend = async () => {
     const fileInput = document.getElementById("fileInput") as HTMLInputElement;
     if (!fileInput.files?.length) {

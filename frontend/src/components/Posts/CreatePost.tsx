@@ -1,20 +1,40 @@
 import { useState } from "react";
 import { FaImage } from "react-icons/fa";
 
+/**
+ * Props for CreatePost component.
+ * @typedef {Object} Props
+ * @property {Function} onPostSubmit - Function to call when a post is submitted.
+ */
 interface Props {
   onPostSubmit: () => void;
 }
 
+/**
+ * A component for creating a new post with text and image upload option.
+ *
+ * @param {Props} props - Props for the component.
+ * @returns {JSX.Element} The `CreatePost` component.
+ */
 const CreatePost = ({ onPostSubmit }: Props) => {
   const [postContent, setPostContent] = useState("");
   const [image, setImage] = useState(null);
 
+  /**
+   * Handles the submission of the post.
+   * Currently logs the post content to console and calls the `onPostSubmit` prop.
+   */
   const handleSubmit = () => {
-    // API Call
     console.log(postContent);
     onPostSubmit();
   };
 
+  /**
+   * Handles changes to the image input field.
+   * Sets the selected image file to state.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} e - The event object.
+   */
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
   };

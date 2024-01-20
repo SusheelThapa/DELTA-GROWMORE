@@ -1,3 +1,9 @@
+/**
+ * @file App.tsx
+ * @description Root component of the application, managing routing and rendering different pages.
+ *
+ * @module App
+ */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 
@@ -77,7 +83,12 @@ const pages = [
     icon: FaSignOutAlt,
   },
 ];
-
+/**
+ * @function App
+ * @description Root component that manages application routing and rendering.
+ *
+ * @returns {JSX.Element} - The main App component.
+ */
 const App = () => {
   return (
     <>

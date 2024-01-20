@@ -1,3 +1,11 @@
+/**
+ * @typedef CommentProps
+ * @type {object}
+ * @property {string} username - The username of the commenter.
+ * @property {string} comment - The content of the comment.
+ * @property {string} date - The date when the comment was posted.
+ * @property {string} [userProfilePic] - Optional URL for the user's profile picture.
+ */
 export interface CommentProps {
   username: string;
   comment: string;
@@ -5,6 +13,12 @@ export interface CommentProps {
   userProfilePic?: string; // Optional profile picture
 }
 
+/**
+ * @function Comment
+ * @description A component to display a user's comment with their profile picture, username, and the date of the comment.
+ * @param {CommentProps} props - Props containing comment details.
+ * @returns {JSX.Element} - A styled component displaying a user comment.
+ */
 const Comment = ({
   username,
   comment,

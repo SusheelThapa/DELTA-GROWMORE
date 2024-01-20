@@ -1,24 +1,38 @@
+/**
+ * @file Finance.tsx
+ * @description Component for the finance page displaying revenue details and analytics.
+ */
+
 import FinanceHero from "../../components/Finance/FinanceHero";
-import {
-  Chart as ChartJS, ArcElement, Tooltip, Legend
-} from 'chart.js'
-import { Pie } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 
-ChartJS.register(
-  ArcElement,
-  Tooltip,
-  Legend
-);
+// Registering Chart.js components
+ChartJS.register(ArcElement, Tooltip, Legend);
+/**
+ * @function Finance
+ * @description Component for the finance page, providing insights into total revenue and analytics.
+ *
+ * @returns {JSX.Element} - The Finance component.
+ */
 const Finance = () => {
+  // Data for sales pie chart
   const sales = {
-    labels: ["localMarket", "export", "others", "marketing", "transportation", "otherExpense"],
+    labels: [
+      "localMarket",
+      "export",
+      "others",
+      "marketing",
+      "transportation",
+      "otherExpense",
+    ],
     datasets: [
       {
         data: [20000, 15000, 20000, 2000, 5000, 2000],
-        backgroundColor: ['aqua', 'orange', 'green', 'yellow', 'purple', 'red']
-      }
-    ]
+        backgroundColor: ["aqua", "orange", "green", "yellow", "purple", "red"],
+      },
+    ],
   };
   const options = {
     plugins: {
@@ -30,36 +44,66 @@ const Finance = () => {
   return (
     <>
       <div className="flex flex-col w-full items-center">
-        <div className="header text-green-600 text-5xl font-bold w-full text-center my-10">GrowMore for Everyone</div>
+        <div className="header text-green-600 text-5xl font-bold w-full text-center my-10">
+          GrowMore for Everyone
+        </div>
         <div>
           <FinanceHero />
         </div>
 
         <div className="sales-info w-full bg-gray-50 mt-[5rem] p-8 flex flex-row items-center justify-center gap-28">
           <div className="w-[50%] border-2 shadow-lg bg-white rounded-xl h-[20rem] p-5">
-            <div className="heading text-2xl font-bold w-full text-center">Total Revenue</div>
+            <div className="heading text-2xl font-bold w-full text-center">
+              Total Revenue
+            </div>
             <hr />
             <div className="text-xl">
               <ul>
-                <li><span className="font-bold">Local Market :</span> NRS. {sales.datasets[0].data[0]}</li>
-                <li><span className="font-bold">Export :</span> NRS. {sales.datasets[0].data[1]}</li>
-                <li><span className="font-bold">Others :</span> NRS. {sales.datasets[0].data[2]}</li>
+                <li>
+                  <span className="font-bold">Local Market :</span> NRS.{" "}
+                  {sales.datasets[0].data[0]}
+                </li>
+                <li>
+                  <span className="font-bold">Export :</span> NRS.{" "}
+                  {sales.datasets[0].data[1]}
+                </li>
+                <li>
+                  <span className="font-bold">Others :</span> NRS.{" "}
+                  {sales.datasets[0].data[2]}
+                </li>
               </ul>
             </div>
             <hr className="mt-3" />
             <ul className="text-xl mt-3">
-              <li><span className="font-bold">Marketing :</span> NRS. {sales.datasets[0].data[3]}</li>
-              <li><span className="font-bold">Transportation :</span> NRS. {sales.datasets[0].data[4]}</li>
-              <li><span className="font-bold">Others :</span> NRS. {sales.datasets[0].data[5]}</li>
+              <li>
+                <span className="font-bold">Marketing :</span> NRS.{" "}
+                {sales.datasets[0].data[3]}
+              </li>
+              <li>
+                <span className="font-bold">Transportation :</span> NRS.{" "}
+                {sales.datasets[0].data[4]}
+              </li>
+              <li>
+                <span className="font-bold">Others :</span> NRS.{" "}
+                {sales.datasets[0].data[5]}
+              </li>
             </ul>
             <hr className="mt-3" />
             <div className="text-xl text-green-800">
-              <span className="font-bold ">Total Profit:</span> NRS. {sales.datasets[0].data[0] + sales.datasets[0].data[1] + sales.datasets[0].data[2] - sales.datasets[0].data[3] - sales.datasets[0].data[4] - sales.datasets[0].data[5]}
+              <span className="font-bold ">Total Profit:</span> NRS.{" "}
+              {sales.datasets[0].data[0] +
+                sales.datasets[0].data[1] +
+                sales.datasets[0].data[2] -
+                sales.datasets[0].data[3] -
+                sales.datasets[0].data[4] -
+                sales.datasets[0].data[5]}
             </div>
           </div>
 
           <div className="w-[20%] border-2 shadow-lg bg-white rounded-xl h-[20rem] p-5">
-            <div className="heading text-2xl font-bold text-center">Analytics</div>
+            <div className="heading text-2xl font-bold text-center">
+              Analytics
+            </div>
             <div className="w-full h-full p-3">
               <Pie data={sales} options={options}></Pie>
             </div>
@@ -70,7 +114,6 @@ const Finance = () => {
             Do you want to connect to our marketplace? Click here...
           </Link>
         </div>
-        
       </div>
     </>
   );

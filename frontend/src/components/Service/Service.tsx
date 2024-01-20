@@ -2,7 +2,17 @@ import { FaRocket } from "react-icons/fa";
 import { HiSupport } from "react-icons/hi";
 import { AiOutlineTeam } from "react-icons/ai";
 
+/**
+ * Component to display the services offered by the platform.
+ * It showcases various services such as community support, 24/7 assistance, and dedicated teamwork.
+ *
+ * Each service is represented with an icon, a title, and a description, which are defined in the services array.
+ *
+ * @returns {JSX.Element} The Service component.
+ */
 const Service = () => {
+  // Defines the list of services with their respective icons, titles, and descriptions.
+
   const services = [
     {
       id: 1,
@@ -32,6 +42,7 @@ const Service = () => {
         "Here we believe teamwork is dreamwork and this is what will take us to the ladders of succes so join our team today!",
     },
   ];
+  // JSX structure for the component
   return (
     <div className="flex mx-80 space-x-16">
       <div className="left flex justify-center items-center ">

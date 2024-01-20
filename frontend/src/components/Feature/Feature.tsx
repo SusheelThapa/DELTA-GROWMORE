@@ -2,7 +2,15 @@ import { GiDiscussion } from "react-icons/gi";
 import { MdInterests } from "react-icons/md";
 import { SiPowerpages } from "react-icons/si";
 import { FaRocket } from "react-icons/fa";
+
+/**
+ * Feature component displays a list of key features of the GrowMore platform.
+ * Each feature is represented with an icon, a title, and a short description.
+ *
+ * @returns {TSX.Element} The rendered Feature component.
+ */
 const Feature = () => {
+  // Array of feature details including icon, title, and description.
   const features = [
     {
       id: 1,
