@@ -1,3 +1,4 @@
+import FarmBreakFastDairy from "./FarmBreakFastDairy";
 import FarmCategory from "./FarmCategory";
 import FarmFruitVeg from "./FarmFruitVeg";
 import FarmHero from "./FarmHero";
@@ -10,6 +11,7 @@ const Farmer = () => {
       <FarmHero />
       <FarmCategory />
       <FarmFruitVeg />
+      <FarmBreakFastDairy />
     </div>
   );
 };
