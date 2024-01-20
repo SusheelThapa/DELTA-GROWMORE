@@ -19,7 +19,7 @@ const Average = () => {
                         <div className="">
                             Temperature
                         </div>
-                        <div className="text-xl font-bold">76 degree</div>
+                        <div className="text-xl font-bold">24 degree</div>
                     </div>
                 </div>
                 <div className="temp border-2 shadow-md rounded-lg flex flex-row h-[3.5rem]">
@@ -53,7 +53,7 @@ const Average = () => {
                         <div className="">
                             Soil Temperature
                         </div>
-                        <div className="text-xl font-bold">76 degree</div>
+                        <div className="text-xl font-bold">20 degree</div>
                     </div>
                 </div>
 
