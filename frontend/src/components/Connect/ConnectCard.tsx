@@ -7,21 +7,20 @@ interface Props {
     };
 }
 
-
 const ConnectCard = ({ cardData }: Props) => {
     return (
-        <div className="card w-[62rem] h-[15rem] rounded-full flex flex-row shadow-xl border my-8 mx-16rem bg-white">
+        <div className="card w-[62rem] h-[15rem] rounded-2xl flex flex-row shadow-xl border my-2 mx-16rem bg-white hover:border-2 hover:border-gray-300">
             <div className="h-full w-[25%] flex justify-center items-center mr-5">
-                <img src={cardData.img} alt="" className='rounded-full h-[90%]' />
+                <img src={cardData.img} alt="" className='rounded-full h-[90%] border-[3px]' />
             </div>
             <div className="h-full w-[65%] flex flex-col mt-3">
                 <div className="company-name text-3xl font-bold">{cardData.companyName}
                     <hr />
                 </div>
                 <div className="company-tags flex justify-row gap-5 h-[16%] mt-3">
-                    {
+                    {cardData.tags && // Add a conditional check here
                         cardData.tags.map((tag) => (
-                            <button key={tag} className="bg-green-500  w-[7rem] h-[2rem] rounded-lg">{tag}</button>
+                            <button key={tag} className="bg-green-500 w-[7rem] h-[2rem] rounded-lg">{tag}</button>
                         ))
                     }
                 </div>
@@ -33,7 +32,7 @@ const ConnectCard = ({ cardData }: Props) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ConnectCard
+export default ConnectCard;

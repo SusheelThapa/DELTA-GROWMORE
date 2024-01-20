@@ -1,5 +1,4 @@
-import Carousel from "../../components/Connect.tsx/Carousel";
-import ConnectCard from "../../components/Connect.tsx/ConnectCard";
+import ConnectCard from "../../components/Connect/ConnectCard";
 
 const Connect = () => {
   const data = [{
@@ -24,22 +23,22 @@ const Connect = () => {
 
   return (
     <>
-      <div className="flex flex-col w-full px-10 bg-green-50">
-      <div className="header w-full text-center text-5xl font-bold my-8">
-        Find Best Company For Your Product
-      </div>
-        {/* <div className="flex justify-center">
-          <Carousel slides={slides} interval={3000} />
-        </div> */}
-        <div className="w-full flex flex-col justify-center">
-          {
-            data.map((cardData)=>(
-              <ConnectCard cardData={cardData}/>
+<div className="flex flex-col items-center w-full px-10 bg-green-50">
+    <div className="header w-full text-center text-5xl font-bold my-8">
+        Find the Best Company for Your Product
+    </div>
+    {/* <div className="flex justify-center">
+        <Carousel slides={slides} interval={3000} />
+    </div> */}
+    <div className="w-full flex flex-col items-center">
+        {
+            data.map((cardData,index) => (
+                <ConnectCard key={index} cardData={cardData} />
             ))
-          }
-        </div>
+        }
+    </div>
+</div>
 
-      </div>
     </>
     // <Carousel/>
   )
