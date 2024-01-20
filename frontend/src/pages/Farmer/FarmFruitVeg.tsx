@@ -95,7 +95,7 @@ const FarmFruitVeg = () => {
         {items.map((item) => (
           <div
             key={item.id}
-            className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-50 mx-3 hover:bg-gray-300"
+            className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-50 mx-3 hover:bg-gray-300 transform hover:scale-105"
           >
             <img
               src={item.image}
