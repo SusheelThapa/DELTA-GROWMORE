@@ -35,7 +35,7 @@ const Sidebar = ({ pages }: Props) => {
                 <div>{React.createElement(menu?.icon, { size: "20" })}</div>
                 <h2
                   style={{
-                    transitionDelay: `${i + 4}00ms`,
+                    transitionDelay: `${i + 5}00ms`,
                   }}
                   className={`whitespace-pre duration-500 ${
                     !open && "opacity-0 translate-x-28 overflow-hidden"
