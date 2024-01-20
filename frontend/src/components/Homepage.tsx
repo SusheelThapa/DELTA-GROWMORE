@@ -30,7 +30,7 @@ const Homepage = ({ pages }: Props) => {
       {false && <Farmer />}
       {false && <MarketAnalysis />}
       {false && <Connect />}
-      {false && <Finance />}
+      {true && <Finance />}
       {false && <GrowAI />}
       {false && <Subscription />}
     </div>
