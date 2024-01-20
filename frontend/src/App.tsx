@@ -24,7 +24,7 @@ import Homepage from "./components/Homepage";
 import MarketAnalysisResult from "./pages/MarketAnalsisResult";
 import Sidebar from "./components/Sidebar";
 import AuthPage from "./pages/AuthPage";
-import Form from "./components/Subscription/Form.jsx";
+import Form from "./components/Subscription/Form.tsx";
 const pages = [
   {
     name: "Dashboard",
