@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 from django.contrib.auth import authenticate
@@ -12,8 +13,47 @@ from .renderers import UserRenderer
 from .models import User, Post, PostLike, PostComment
 from .serializers import UserRegisterationSerializer, UserLoginSerializer, UserProfileSerializer, UserPostCreateSerializer, PostViewSerializer, PostCommentSerializer, PostLikeSerializer
 
+import numpy as np
+import tensorflow as tf
+from io import BytesIO
+from PIL import Image
 
-# Utility function to generate JWT tokens for a user
+from django.conf import settings
+temp = os.path.join(settings.BASE_DIR, "core/")
+
+MODEL = tf.keras.models.load_model(temp+"ml_model")
+CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
+
+
+class predict(APIView):
+    def post(self, request):
+        if 'image' not in request.FILES:
+            return Response({'error': 'No image provided'}, status=400)
+
+        image = request.FILES['image']
+        image_array = read_file_as_image(image.read())
+        img_batch = np.expand_dims(image_array, 0)
+
+        predictions = MODEL.predict(img_batch)
+        predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
+        confidence = float(np.max(predictions[0]))
+
+        if predicted_class == 'Early Blight':
+            res = "To manage Early Blight disease in potatoes, start by identifying dark brown lesions with concentric rings on lower leaves. Remove and isolate infected plants, pruning affected leaves with sanitized tools. Maintain a clean environment by removing debris and fallen leaves. Water at the base to avoid wetting foliage, and consider applying fungicides labeled for Early Blight. Apply organic mulch, practice crop rotation, and opt for resistant potato varieties. Regular monitoring for signs of the disease and prompt intervention will help minimize its impact on the crop."
+        elif predicted_class == 'Late Blight':
+            res = "To address Late Blight disease in potatoes, begin by closely inspecting plants for dark, water-soaked lesions on leaves, usually starting at the tips. Immediately isolate and remove infected plants to prevent the spread. Prune affected foliage, ensuring tools are sanitized to avoid further contamination. Keep the surroundings clean by removing fallen leaves and debris. Opt for morning watering at the base to allow foliage to dry quickly. Consider applying fungicides specifically designed for Late Blight, following recommended guidelines. Employ organic mulch, practice crop rotation, and select potato varieties resistant to Late Blight. Regularly monitor the crop for any signs of the disease, promptly taking preventive measures as necessary to protect the potato plants."
+
+        return Response({
+            'class': predicted_class,
+            'confidence': confidence,
+            'res':res
+        })
+
+def read_file_as_image(data) -> np.ndarray:
+    image = np.array(Image.open(BytesIO(data)))
+    return image
+
+# Utility function to generate JWT tokens for a user``
 def get_tokens_for_user(user):
     refresh = RefreshToken.for_user(user)
     return {
@@ -116,3 +156,10 @@ class KhaltiPaymentView(APIView):
         response = requests.request("POST", url, headers=headers, data=payload)
         print(response.text)
         return Response(response.text)
+    
+# View for fetching weather data.
+class MonitoringView(APIView):
+    def get(self, request):
+        url = "https://api.openweathermap.org/data/2.5/weather?lat=26.816667&lon=87.283333&appid=4ea131fa3e5db7576491b75e15a9f65f"
+        response = requests.request("GET", url)
+        return Response({'weather':response.text}, status=status.HTTP_200_OK)
