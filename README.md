@@ -30,7 +30,7 @@
     </p>
 </p>
 
-[dharan-growmore](https://github.com/SusheelThapa/dharan-growmore:) A transformative agricultural platform at the intersection of innovation and sustainability. Harnessing the power of AI, GrowMore connects farmers directly to markets, offers precision insights for resource optimization, and promotes sustainable practices. With a focus on community collaboration, transparent supply chains, and continuous education, GrowMore is reshaping the future of farming.
+[dharan-growmore](https://github.com/SusheelThapa/dharan-growmore:) is a transformative agricultural platform at the intersection of innovation and sustainability. Harnessing the power of AI, GrowMore connects farmers directly to markets, offers precision insights for resource optimization, and promotes sustainable practices. With a focus on community collaboration, transparent supply chains, and continuous education, GrowMore is reshaping the future of farming.
 
 ## Table of Contents
 
@@ -51,9 +51,7 @@
 
 ## Demo
 
-<!-- TODO: Demo video will be update via github -->
-### Canva Link 
-- https://www.canva.com/design/DAFbokN_c4U/4H2Z5TQTwC5iSnctsKOtYQ/edit?utm_content=DAFbokN_c4U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+https://github.com/SusheelThapa/dharan-growmore/assets/83917129/8106976b-3191-48ff-a9de-75b089e227fe
 
 ## Installation
 
